@@ -19,6 +19,7 @@ import ForgetPassword from "./features/authentication/ForgetPassword";
 import Courses from "./pages/Courses";
 import Instructors from "./pages/Instructors";
 import Students from "./pages/students";
+import CourseForm from "./features/courses/CourseForm";
 
 const protectedRoutes = [
   {
@@ -29,12 +30,13 @@ const protectedRoutes = [
       { path: "dashboard", element: <Dash /> },
 
       { path: "/courses", element: <Courses /> },
+      { path: "/courses/course-form", element: <CourseForm /> },
+
       { path: "/orders", element: <Orders /> },
       { path: "/instructors", element: <Instructors /> },
       { path: "/students", element: <Students /> },
       { path: "/roles", element: <JobRoles /> },
       { path: "/employees", element: <Employees /> },
-
       {
         path: "/employees-and-roles/employees",
         element: <RolesAndEmployees />,

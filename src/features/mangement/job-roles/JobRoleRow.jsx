@@ -1,6 +1,6 @@
-import { TableRow } from "../../../ui/table/TableRow";
-import { TableCell } from "../../../ui/table/TableCell";
-import Actions from "../../../ui/Actions";
+import { TableRow } from "../../../../../Tyara Vendor/Tayara-vendor-front/src/ui/table/TableRow";
+import { TableCell } from "../../../../../Tyara Vendor/Tayara-vendor-front/src/ui/table/TableCell";
+import Actions from "../../../../../Tyara Vendor/Tayara-vendor-front/src/ui/Actions";
 import { useNavigate } from "react-router-dom";
 
 function JobRoleRow({ jobRole }) {

@@ -1,6 +1,6 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
-import { branchesServices } from "../../../data/api";
+import { branchesServices } from "../../../../../Tyara Vendor/Tayara-vendor-front/src/data/api";
 
 export default function useUpdateBranches() {
   const queryClient = useQueryClient();

@@ -20,11 +20,15 @@ function Courses() {
 
   return (
     <>
-      <Section title={t("routes.studnts")}>
+      <Section title={t("routes.courses")}>
         <OperationsContainer>
           <SearchInput />
 
-          <TableOperations filterInputs={<FormInputs />} />
+          <TableOperations
+            addTitle={"addButtons.addCourse"}
+            addPath={"/courses/course-form"}
+            filterInputs={<FormInputs />}
+          />
         </OperationsContainer>
 
         <Row>

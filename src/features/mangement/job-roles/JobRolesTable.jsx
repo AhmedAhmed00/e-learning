@@ -1,4 +1,4 @@
-import GenericTable from "../../../ui/table/GenericTable";
+import GenericTable from "../../../../../Tyara Vendor/Tayara-vendor-front/src/ui/table/GenericTable";
 import JobRoleRow from "./JobRoleRow";
 import useJobRoles from "./useJobRoles";
 
