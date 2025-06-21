@@ -1,0 +1,56 @@
+{
+  
+  "common":{ 
+    "searchInput":"What are you looking for ...?",
+    "next":"Next",
+    "update":"Update",
+    "login":"login",
+    "logout":"logout",
+    "cancel":"Cancel",
+    "apply":"Apply",
+    "forgetPassword":"Forget Password ?",
+    "sendCode":"Send Code",
+    "enterPhoneMsg":"Enter your phone number to help us sending you the verification code."
+    
+  },
+  
+  "dashboard":{ 
+    
+  } , 
+  
+
+  "routes":{ 
+    
+
+      
+
+  },
+
+  
+  "dataKeys":{ 
+   
+  
+  
+  
+  
+ 
+  },
+  "addButtons":{ 
+   
+  },
+  
+  "groupInputHeader":{
+    
+    
+  },
+  
+  
+  "addTitles":{ 
+    
+  }
+  
+  
+  
+
+ 
+}

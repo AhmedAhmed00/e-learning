@@ -1,0 +1,48 @@
+{
+  "common": {
+    "next": "التالي",
+    "update": "تحديث",
+    "login": "تسجيل الدخول",
+    "logout": "تسجيل الخروح",
+    "apply":"تطبيق",
+    "cancel": "إلغاء",
+    "forgetPassword":"نسيت كلمة المرور ؟",
+    "sendCode":"إرسال الكود",
+    "enterPhoneMsg":"أدخل رقم هاتفك لمساعدتنا في إرسال رمز التحقق إليك."
+
+
+
+
+
+
+
+
+
+
+  },
+  "dashboard": {
+
+  },
+
+  "routes": {
+    "dashboard": "لوحة التحكم"
+    
+  },
+
+  "dataKeys": {
+    
+
+
+
+  },
+  "groupInputHeader": {
+    
+  },
+
+  "addButtons": {
+   
+  },
+  "addTitles": {
+    
+  }
+}
