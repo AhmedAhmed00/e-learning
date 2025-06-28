@@ -25,6 +25,8 @@ import GeneralInfo from "./features/courses/course-view/GeneralInfo";
 import CourseDetails from "./features/courses/course-view/CourseDetails";
 import CourseChapter from "./features/courses/course-view/CourseChapter";
 import CourseChapterForm from "./features/courses/forms/CourseChapterForm";
+import LecturesToChapterForm from "./features/courses/forms/LecturesToChapterForm";
+import LectureView from "./features/courses/course-view/LectureView";
 
 const protectedRoutes = [
   {
@@ -44,9 +46,19 @@ const protectedRoutes = [
           { path: "course-details", element: <CourseDetails /> },
         ],
       },
+
+      {
+        path: "/courses/:courseId/course-details/:courseId/lectures/:lectureId",
+        element: <LectureView />,
+      },
+
       {
         path: "/courses/:id/course-details/chapter-form",
         element: <CourseChapterForm />,
+      },
+      {
+        path: "/courses/:id/course-details/chapter-form/lectures-to-chapter",
+        element: <LecturesToChapterForm />,
       },
       { path: "/courses/:id/course-details/:id", element: <CourseChapter /> },
 

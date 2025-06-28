@@ -17,7 +17,12 @@ function Instructors() {
     <Section title={t("routes.instructors")}>
       <OperationsContainer>
         <SearchInput />
-        <TableOperations filterInputs={<FormInputs />} />
+        <TableOperations
+          addPath={"/instructors/instructor-form"}
+          addTitle={t("buttons.addInstructor")}
+          // filterInputs={<FormInputs />}
+          filterable={false}
+        />
       </OperationsContainer>
       <Row>
         <InstructorsTable />

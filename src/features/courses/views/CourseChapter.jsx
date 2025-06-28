@@ -10,6 +10,8 @@ import { StyledCourseDetail } from "./CourseDetails";
 import styled from "styled-components";
 import { FiDelete } from "react-icons/fi";
 import { useModalEl } from "../../../hooks/useModal";
+import { Line } from "recharts";
+import { Link } from "react-router-dom";
 
 export default function CourseChapter() {
   const { t } = useTranslation();
@@ -118,7 +120,9 @@ const StyledLecture = styled(Row)`
 function LectureDetail({ title }) {
   return (
     <StyledLecture type="horizontal" $padding="10px 15px" $justify="between">
-      <p>{title}</p>
+      <Link to={"lectures/1"}>
+        <p>{title}</p>
+      </Link>
       <FiDelete size={20} color="var(--color-red-700)" />
     </StyledLecture>
   );

@@ -1,42 +1,79 @@
 import { useEffect, useState } from "react";
 import { useController } from "react-hook-form";
 import styled from "styled-components";
+import { FiEdit, FiUpload } from "react-icons/fi";
 
-const StyledFileInput = styled.input.attrs({ type: "file", multiple: true })`
+// Hidden input
+const HiddenFileInput = styled.input.attrs({ type: "file", multiple: true })`
+  display: none;
+`;
+
+// Wrapper for all file boxes
+const UploadBoxWrapper = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+`;
+
+// Each file/item box
+const UploadBox = styled.div`
+  position: relative;
+  width: 100%;
+  height: 120px;
+  border: 2px dashed ${({ dangerBorder }) => (dangerBorder ? "red" : "#d1d5db")};
+  border-radius: 8px;
+  background-color: #f9fafb;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
   align-items: center;
   justify-content: center;
-  height: 48px;
-  font-size: 14px;
-  border-radius: 8px;
-  border: 1px solid
-    ${({ dangerBorder }) => (dangerBorder ? "red" : "var(--color-grey-300)")};
-  background-color: #fff;
+  overflow: hidden;
   cursor: pointer;
-  transition: all 0.2s;
-  outline: none;
+  transition: background 0.2s;
 
-  &::file-selector-button {
-    font: inherit;
-    height: 100%;
-    font-weight: 500;
-    font-size: 14px;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    border: none;
+  &:hover {
     background-color: #f3f4f6;
-    color: #111827;
-    cursor: pointer;
-    transition:
-      background-color 0.2s,
-      color 0.2s;
+  }
 
-    &:hover {
-      background-color: #e5e7eb;
-    }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  p {
+    font-size: 1.3rem;
+    text-decoration: underline;
+  }
+
+  span {
+    font-size: 12px;
+    color: #6b7280;
+    text-align: center;
+    padding: 4px;
   }
 `;
 
+// Button to remove a file
+const RemoveButton = styled.button`
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background: red;
+  color: white;
+  border: none;
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-size: 10px;
+  cursor: pointer;
+
+  &:hover {
+    background: darkred;
+  }
+`;
+
+// File type map
 const fileTypeMap = {
   pdf: "application/pdf",
   excel:
@@ -46,36 +83,6 @@ const fileTypeMap = {
   other: "*",
 };
 
-const FileList = styled.div`
-  margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-`;
-
-const FileItem = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #f9f9f9;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 14px;
-`;
-
-const RemoveButton = styled.button`
-  background: red;
-  color: white;
-  border: none;
-  padding: 3px 8px;
-  border-radius: 4px;
-  cursor: pointer;
-
-  &:hover {
-    background: darkred;
-  }
-`;
-
 function FilesInput({ control, name, documentType }) {
   const [acceptedTypes, setAcceptedTypes] = useState(fileTypeMap.other);
   const [selectedFiles, setSelectedFiles] = useState([]);
@@ -84,112 +91,92 @@ function FilesInput({ control, name, documentType }) {
     field: { onChange, onBlur, ref, value },
   } = useController({ name, control });
 
-  // Set accepted file types
   useEffect(() => {
     setAcceptedTypes(fileTypeMap[documentType] || fileTypeMap.other);
   }, [documentType]);
 
-  // Load existing files on edit
   useEffect(() => {
-    if (value && Array.isArray(value)) {
-      setSelectedFiles(value);
+    if (Array.isArray(value)) {
+      const withPreview = value.map((file) => {
+        if (
+          file instanceof File &&
+          file.type?.startsWith("image/") &&
+          !file.previewUrl
+        ) {
+          file.previewUrl = URL.createObjectURL(file);
+        }
+        return file;
+      });
+      setSelectedFiles(withPreview);
     }
   }, [value]);
-  const [isFirstMount, setIsFirstMount] = useState(true);
+
   useEffect(() => {
-    setIsFirstMount(false);
-  }, [isFirstMount]);
+    return () => {
+      selectedFiles.forEach((file) => {
+        if (file.previewUrl) URL.revokeObjectURL(file.previewUrl);
+      });
+    };
+  }, [selectedFiles]);
 
-  //   useEffect(() => {
-  //     const initializeFiles = async () => {
-  //       if (!control._formValues[name]) return;
-
-  //       const value = control._formValues[name];
-
-  //       console.log(value, "vaaaaaaaaaaaaaaalue");
-
-  //       if (Array.isArray(value)) {
-  //         if (value.length > 0) {
-  //           // Handle URL attachments
-
-  //           const files = await Promise.all(
-  //             value.map(async (attachment, index) => {
-  //               console.log(attachment.file, "attachment");
-  //               const response = await fetch(attachment?.file);
-  //               const blob = await response.blob();
-  //               return new File([blob], `attachment-${index}.pdf`, {
-  //                 type: blob.type,
-  //               });
-  //             })
-  //           );
-  //           const validFiles = files.filter(Boolean);
-  //           setSelectedFiles(validFiles);
-  //           onChange(validFiles);
-  //         } else {
-  //           // Already File objects
-  //           setSelectedFiles(value);
-  //         }
-  //       }
-  //     };
-
-  //     initializeFiles();
-  //   }, [control._formValues[name]]);
-
-  // useEffect(() => {
-  //   const fetchAttachments = async () => {
-  //     if (Array.isArray(value) && value.length > 0) {
-  //       const files = await Promise.all(
-  //         value.map(async (attachment, index) => {
-  //           const response = await fetch(attachment.file);
-  //           const blob = await response.blob();
-  //           console.log(blob);
-  //           return new File([blob], `attachment-${index}.pdf`);
-  //         })
-  //       );
-  //       setSelectedFiles(files);
-  //       console.log(selectedFiles, "imaaaaaaaaaaaaaaaages");
-  //       onChange(files);
-  //     }
-  //   };
-  //   console.log(isFirstMount);
-
-  //   fetchAttachments();
-  // }, [isFirstMount]);
-
-  // Handle file selection
   const handleChange = (e) => {
-    const files = Array.from(e.target.files);
-    const updatedFiles = [...selectedFiles, ...files]; // Append new files
-    setSelectedFiles(updatedFiles);
-    onChange(updatedFiles);
+    const files = Array.from(e.target.files).map((file) => {
+      if (file.type.startsWith("image/")) {
+        file.previewUrl = URL.createObjectURL(file);
+      }
+      return file;
+    });
+
+    const updated = [...selectedFiles, ...files];
+    setSelectedFiles(updated);
+    onChange(updated);
   };
-  // Remove a file from the list
+
   const removeFile = (index) => {
+    const removedFile = selectedFiles[index];
+    if (removedFile?.previewUrl) {
+      URL.revokeObjectURL(removedFile.previewUrl);
+    }
     const newFiles = selectedFiles.filter((_, i) => i !== index);
     setSelectedFiles(newFiles);
     onChange(newFiles);
   };
 
+  const triggerInput = () => {
+    const input = document.getElementById(name);
+    if (input) input.click();
+  };
+
   return (
     <div>
-      <StyledFileInput
+      <UploadBoxWrapper>
+        {selectedFiles.map((file, index) => (
+          <UploadBox key={index}>
+            {file.type?.startsWith("image/") && file.previewUrl ? (
+              <img src={file.previewUrl} alt="Preview" />
+            ) : (
+              <span>{file.name || "File"}</span>
+            )}
+            <RemoveButton onClick={() => removeFile(index)}>
+              Remove
+            </RemoveButton>
+          </UploadBox>
+        ))}
+
+        {/* Always visible upload box */}
+        <UploadBox onClick={triggerInput}>
+          <FiUpload />
+          <p>Upload File</p>
+        </UploadBox>
+      </UploadBoxWrapper>
+
+      <HiddenFileInput
+        id={name}
         accept={acceptedTypes}
-        type="file"
         onChange={handleChange}
         onBlur={onBlur}
         ref={ref}
       />
-
-      <FileList>
-        {selectedFiles.map((file, index) => (
-          <FileItem key={index}>
-            <span>{file?.file || file?.name || file}</span>
-            <RemoveButton onClick={() => removeFile(index)}>
-              Remove
-            </RemoveButton>
-          </FileItem>
-        ))}
-      </FileList>
     </div>
   );
 }

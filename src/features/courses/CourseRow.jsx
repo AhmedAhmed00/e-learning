@@ -21,7 +21,9 @@ export default function CourseRow({ data }) {
           onView={() => {
             navigate("1");
           }}
-          onUpdate={() => {}}
+          onUpdate={() => {
+            navigate("/courses/course-form?mode=update&id=1", { state: data });
+          }}
         />
       </TableCell>
     </TableRow>

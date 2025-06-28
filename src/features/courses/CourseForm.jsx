@@ -1,5 +1,5 @@
 import { useQueryClient } from "@tanstack/react-query";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useForm } from "react-hook-form";
 
@@ -24,6 +24,7 @@ function CourseForm() {
   const queryClient = useQueryClient();
   const navigate = useNavigate();
   const { t, i18n: { language } = {} } = useTranslation();
+  const { state } = useLocation();
 
   const {
     register,
@@ -33,10 +34,7 @@ function CourseForm() {
     reset,
     setError,
   } = useForm({
-    defaultValues: {
-      subCategories: [{ subCategory: "" }],
-      type: "free", // default selected value
-    },
+    defaultValues: state ? state : {},
   });
 
   const validate = useValidate(errors);
@@ -47,7 +45,11 @@ function CourseForm() {
   };
 
   return (
-    <Section title={t("addButtons.addCourse")}>
+    <Section
+      title={
+        state ? t("updateButtons.updateCourse") : t("addButtons.addCourse")
+      }
+    >
       <Form onSubmit={handleSubmit(onSubmit)}>
         {/* Course Photo */}
         <InputsRow>

@@ -2,7 +2,7 @@ import React from "react";
 import { useController } from "react-hook-form";
 import styled from "styled-components";
 
-const SwitchContainer = styled.label`
+export const SwitchContainer = styled.label`
   display: flex;
   align-items: center;
   width: 100%;
@@ -13,16 +13,17 @@ const SwitchContainer = styled.label`
   text-transform: capitalize;
 `;
 
-const Switch = styled.div`
+export const Switch = styled.div`
   width: 40px;
   height: 20px;
   background: ${({ isOn }) => (isOn ? "#4CAF50" : "#ccc")};
   border-radius: 20px;
   position: relative;
   transition: background 0.3s ease-in-out;
+  cursor: pointer;
 `;
 
-const ToggleCircle = styled.div`
+export const ToggleCircle = styled.div`
   width: 15px;
   height: 15px;
   background: white;

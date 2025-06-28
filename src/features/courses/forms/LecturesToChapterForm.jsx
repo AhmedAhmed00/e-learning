@@ -11,8 +11,10 @@ import { useForm } from "react-hook-form";
 import useValidate from "../../../hooks/useValidate";
 import Button from "../../../ui/Button";
 import useDetectMode from "../../../hooks/useDetectMode";
+import FileInput from "../../../ui/FileInput";
+import FilesInput from "../../../ui/FilesInput";
 
-export default function CourseChapterForm() {
+export default function LecturesToChapterForm() {
   const { t } = useTranslation();
   const { id: courseId } = useParams();
   const {
@@ -26,39 +28,40 @@ export default function CourseChapterForm() {
   const navigate = useNavigate();
 
   function onSubmit(values) {
-    navigate("lectures-to-chapter", { state: values });
+    console.log(values);
   }
 
-  console.log(errors);
   return (
     <Section title={t("dataKeys.addNewChapter")}>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <InputsRow>
-          <FormRow label={t("dataKeys.chapterName")}>
+          <FormRow label={t("dataKeys.lectureName")}>
             <Input />
           </FormRow>
-          <FormRow label={t("dataKeys.price")}>
+          <FormRow label={t("dataKeys.lectureTime")}>
             <Input />
           </FormRow>
         </InputsRow>
 
-        <div
-          style={{
-            paddingTop: "20px",
-          }}
-        >
-          <FormRow label={t("dataKeys.type")} error={validate("type")}>
-            <RadioGroup
-              name="type"
-              options={[
-                { value: "free", label: t("dataKeys.free") || "Free" },
-                { value: "paid", label: t("dataKeys.paid") || "Paid" },
-              ]}
-              register={register}
+        <InputsRow>
+          <FormRow label={t("dataKeys.videoUrl")}>
+            <Input />
+          </FormRow>
+          <FormRow label={t("dataKeys.quizUrl")}>
+            <Input />
+          </FormRow>
+        </InputsRow>
+
+        <InputsRow>
+          <FormRow label={t("dataKeys.attachments")}>
+            <FilesInput
+              documentType="pdf"
               control={control}
+              name={"attachments"}
             />
           </FormRow>
-        </div>
+          <FormRow></FormRow>
+        </InputsRow>
 
         <FormActionsContainer>
           <Button isLoading={false} size="medium" variation="secondary">
