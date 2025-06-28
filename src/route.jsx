@@ -20,13 +20,15 @@ import Courses from "./pages/Courses";
 import Instructors from "./pages/Instructors";
 import Students from "./pages/students";
 import CourseForm from "./features/courses/CourseForm";
-import CourseVeiw from "./features/courses/course-view/CourseVeiw";
-import GeneralInfo from "./features/courses/course-view/GeneralInfo";
-import CourseDetails from "./features/courses/course-view/CourseDetails";
-import CourseChapter from "./features/courses/course-view/CourseChapter";
+import CourseVeiw from "./features/courses/views/CourseVeiw";
+import GeneralInfo from "./features/courses/views/GeneralInfo";
+import CourseDetails from "./features/courses/views/CourseDetails";
+import CourseChapter from "./features/courses/views/CourseChapter";
 import CourseChapterForm from "./features/courses/forms/CourseChapterForm";
 import LecturesToChapterForm from "./features/courses/forms/LecturesToChapterForm";
-import LectureView from "./features/courses/course-view/LectureView";
+import LectureView from "./features/courses/views/LectureView";
+import InstructorForm from "./features/instructors/InstructorForm";
+import OrderView from "./features/orders/view/OrderView";
 
 const protectedRoutes = [
   {
@@ -68,7 +70,10 @@ const protectedRoutes = [
       },
 
       { path: "/orders", element: <Orders /> },
+      { path: "/orders/:id", element: <OrderView /> },
+
       { path: "/instructors", element: <Instructors /> },
+      { path: "/instructors/instructor-form", element: <InstructorForm /> },
       { path: "/students", element: <Students /> },
       { path: "/roles", element: <JobRoles /> },
       { path: "/employees", element: <Employees /> },
