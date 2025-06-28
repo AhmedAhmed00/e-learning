@@ -20,6 +20,11 @@ import Courses from "./pages/Courses";
 import Instructors from "./pages/Instructors";
 import Students from "./pages/students";
 import CourseForm from "./features/courses/CourseForm";
+import CourseVeiw from "./features/courses/course-view/CourseVeiw";
+import GeneralInfo from "./features/courses/course-view/GeneralInfo";
+import CourseDetails from "./features/courses/course-view/CourseDetails";
+import CourseChapter from "./features/courses/course-view/CourseChapter";
+import CourseChapterForm from "./features/courses/forms/CourseChapterForm";
 
 const protectedRoutes = [
   {
@@ -30,7 +35,25 @@ const protectedRoutes = [
       { path: "dashboard", element: <Dash /> },
 
       { path: "/courses", element: <Courses /> },
-      { path: "/courses/course-form", element: <CourseForm /> },
+      {
+        path: "/courses/:id",
+        element: <CourseVeiw />,
+        children: [
+          { index: true, element: <Navigate replace to="general-info" /> },
+          { path: "general-info", element: <GeneralInfo /> },
+          { path: "course-details", element: <CourseDetails /> },
+        ],
+      },
+      {
+        path: "/courses/:id/course-details/chapter-form",
+        element: <CourseChapterForm />,
+      },
+      { path: "/courses/:id/course-details/:id", element: <CourseChapter /> },
+
+      {
+        path: "/courses/course-form",
+        element: <CourseForm />,
+      },
 
       { path: "/orders", element: <Orders /> },
       { path: "/instructors", element: <Instructors /> },

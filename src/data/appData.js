@@ -8,6 +8,16 @@ export const rolesAndEmployeesTabs = [
     to: "/employees-and-roles/job-roles",
   },
 ];
+export const courseTabs = [
+  {
+    title: "generalInfo",
+    to: "general-info",
+  },
+  {
+    title: "courseDetails",
+    to: "course-details",
+  },
+];
 
 export const vendorTabs = [
   {
@@ -62,8 +72,7 @@ export const vendorTabs = [
   },
 ];
 
-
-export const driversTabs  = [
+export const driversTabs = [
   {
     id: 1,
     title: "profile",

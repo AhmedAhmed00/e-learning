@@ -12,5 +12,9 @@ export const TableHeader = styled.header`
 
   color: var(--color-grey-600);
   padding: 1.2rem 3.6rem;
-  ${"" /* border: 1px solid #e2e2e2; */}
+  margin-bottom: 1rem;
+  ${
+    "" /* border: 1px solid #e2e2e2;
+     */
+  }
 `;

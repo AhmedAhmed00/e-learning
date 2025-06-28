@@ -8,7 +8,7 @@ const StyledHeader = styled.header`
   background-color: rgba(249, 249, 249, 1);
   padding: 1.2rem 3.4rem;
   padding-block: 20px;
-  border: 1px solid var(--color-grey-200);
+  ${"" /* border: 1px solid var(--color-grey-200); */}
   display: flex;
   justify-content: space-between;
   align-items: center;

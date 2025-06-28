@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const TabLinks = styled.ul`
   display: flex;
-  gap: 15px;
+  gap: 20px;
   align-items: center;
   margin-bottom: 18px;
 `;
@@ -13,11 +13,11 @@ const StyledNavLink = styled(NavLink)`
   color: #888888;
   font-size: 18px;
   font-weight: 600;
-  padding-bottom: 1px;
+  padding-bottom: 4px;
 
   &.active {
     color: var(--color-primary);
-    border-bottom: 2px solid var(--color-primary);
+    border-bottom: 3px solid var(--color-primary);
   }
 `;
 

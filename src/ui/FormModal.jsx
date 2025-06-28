@@ -3,6 +3,7 @@ import { FaTimes } from "react-icons/fa";
 
 import { fadeIn, fadeOut } from "./ConfirmDelete";
 import { Overlay } from "./table/Modal";
+import { createPortal } from "react-dom";
 
 export const ModalContent = styled.div`
   animation: ${(props) => (props.isClosing ? fadeOut : fadeIn)} 0.2s ease-in-out;
@@ -37,7 +38,7 @@ export default function FormModal({
   handleClose,
   form,
 }) {
-  return (
+  return createPortal(
     <Overlay isClosing={isClosing} onClick={handleClose}>
       <ModalContent onClick={(e) => e.stopPropagation()} isClosing={isClosing}>
         <CloseButton onClick={handleClose}>
@@ -46,6 +47,7 @@ export default function FormModal({
 
         {form}
       </ModalContent>
-    </Overlay>
+    </Overlay>,
+    document.body
   );
 }

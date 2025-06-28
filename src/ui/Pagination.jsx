@@ -4,10 +4,9 @@ import styled from "styled-components";
 import useFilters from "../hooks/useFilter";
 
 const StyledPagination = styled.div`
-  width: 100%;
   display: flex;
   align-items: center;
-
+  margin: auto;
   justify-content: space-between;
 `;
 
@@ -22,7 +21,7 @@ const StyledPagination = styled.div`
 
 const Buttons = styled.div`
   display: flex;
-  gap: 0.6rem;
+  gap: 1.6rem;
 `;
 
 const PaginationButton = styled.button`
