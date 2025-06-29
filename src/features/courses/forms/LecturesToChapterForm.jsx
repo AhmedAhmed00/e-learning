@@ -32,7 +32,7 @@ export default function LecturesToChapterForm() {
   }
 
   return (
-    <Section title={t("routes.addNewLecture")}>
+    <Section title={t("buttons.addNewLecture")}>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <InputsRow>
           <FormRow label={t("dataKeys.lectureName")}>

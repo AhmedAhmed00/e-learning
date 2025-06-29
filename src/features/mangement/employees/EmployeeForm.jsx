@@ -310,7 +310,7 @@ function EmployeeForm() {
             <Input type="password" {...register("password")} />
           </FormRow>
 
-          <FormRow error={validate("job_role")} label={t("dataKeys.jobRole")}>
+          <FormRow error={validate("job_role")} label={t("dataKeys.role")}>
             <Select
               items={[]}
               chooseValue="jobRole"
@@ -353,7 +353,9 @@ function EmployeeForm() {
           gap="15px"
         >
           <Button isLoading={false} size="medium" $variation="primary">
-            {isEditingSession ? "Update Employee" : t("buttons.addEmployee")}
+            {isEditingSession
+              ? t("buttons.updateEmployee")
+              : t("buttons.addEmployee")}
           </Button>
         </Row>
       </Form>

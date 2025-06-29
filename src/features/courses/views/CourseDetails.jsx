@@ -16,11 +16,13 @@ export default function CourseDetails() {
   return (
     <Row>
       <Row
-        $margin="10px 0px"
+        $margin="10px 10px 0px  0px"
         style={{ justifyContent: "space-between", alignItems: "center" }}
         type="horizonal"
       >
-        <Heading>{t("dataKeys.chapters")}</Heading>
+        <Heading as={"h3"} margin="0px 0 20px 0px">
+          {t("dataKeys.chapters")}
+        </Heading>
         <Button
           onClick={() => {
             navigate(`/courses/${courseId}/course-details/chapter-form`);

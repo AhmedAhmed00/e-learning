@@ -2,6 +2,7 @@ import { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import Button from "./Button";
 import Heading from "./Heading";
+import { useTranslation } from "react-i18next";
 
 // Keyframes for fade-in and fade-out
 export const fadeIn = keyframes`
@@ -56,6 +57,7 @@ const StyledConfirmDelete = styled.div`
 
 function ConfirmDelete({ resource, onConfirm, closeModal }) {
   const [isClosing, setIsClosing] = useState(false);
+  const { t } = useTranslation();
 
   const handleClose = () => {
     setIsClosing(true);
@@ -70,12 +72,12 @@ function ConfirmDelete({ resource, onConfirm, closeModal }) {
         isClosing={isClosing}
         onClick={(e) => e.stopPropagation()}
       >
-        <Heading as="h2">Delete Record</Heading>
-        <p>Are you sure you need to delete the record ?</p>
+        <Heading as="h2">{t("common.deleteRecord")}</Heading>
+        <p>{t("common.confirmDelete")}</p>
 
         <div>
           <Button variation="secondary" onClick={handleClose}>
-            No, keep it
+            {t("common.keepIt")}
           </Button>
           <Button
             size="medium"
@@ -85,7 +87,7 @@ function ConfirmDelete({ resource, onConfirm, closeModal }) {
               handleClose();
             }}
           >
-            Yes, Delete it
+            {t("common.deleteIt")}
           </Button>
         </div>
       </StyledConfirmDelete>

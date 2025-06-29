@@ -2,7 +2,7 @@ import React from "react";
 import GenericTable from "../../../ui/table/GenericTable"; // adjust the path if needed
 import JobRoleRow from "./JobRoleRow";
 
-export const JOB_ROLES_HEADS = ["name", "numberOfEmployees", "Actions"];
+export const JOB_ROLES_HEADS = ["name", "numberOfEmployees", "actions"];
 
 const JobRoles = [
   {

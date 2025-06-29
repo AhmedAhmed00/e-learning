@@ -10,7 +10,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { StyledPhoneInput } from "../../ui/PhoneNumbers";
 import Logo from "../../ui/Logo";
 import styled from "styled-components";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 import { loginschema } from "../../schema";
 
 const LogoContainer = styled.div`
@@ -22,7 +22,7 @@ const LogoContainer = styled.div`
 
 function LoginForm() {
   const navigate = useNavigate();
-
+  const { t } = useTranslation();
   const { isLoading, login, accessToken } = useAuth();
 
   useEffect(() => {
@@ -55,13 +55,13 @@ function LoginForm() {
             render={({ field }) => <StyledPhoneInput country="iq" {...field} />}
           />
         </FormRow>
-        {errors.phone && <p className="text-red-500">{errors.phone.message}</p>}
+        {errors.phone && <p className="text-red-500">{t(errors.phone.message)}</p>}
         <div style={{ marginTop: "20px" }}></div>
         <FormRow label={t("dataKeys.password")} orientation="vertical">
           <Input type="password" id="password" {...register("password")} />
         </FormRow>
         {errors.password && (
-          <p className="text-red-500">{errors.password.message}</p>
+          <p className="text-red-500">{t(errors.password.message)}</p>
         )}
         <FormRow>
           <Link to={"/auth/forget-password"}>

@@ -69,7 +69,7 @@ function InstructorForm() {
 
           <FormRow
             error={validate("Specialization")}
-            label={t("dataKeys.Specialization")}
+            label={t("dataKeys.specialization")}
           >
             <Input type="number" {...register("Specialization")} />
           </FormRow>
@@ -77,10 +77,7 @@ function InstructorForm() {
 
         {/* Category and Dates */}
         <InputsRow>
-          <FormRow
-            error={validate("phoneNumber")}
-            label={t("dataKeys.phoneNumber")}
-          >
+          <FormRow error={validate("phoneNumber")} label={t("dataKeys.phone")}>
             <PhoneInput country={"eg"} {...register("phoneNumber")} />
           </FormRow>
 
@@ -96,7 +93,7 @@ function InstructorForm() {
 
           <FormRow
             error={validate("confirmPassword ")}
-            label={t("dataKeys.confirmPassword ")}
+            label={t("dataKeys.confirmPassword")}
           >
             <Input name="confirmPassword " />
           </FormRow>
@@ -110,7 +107,7 @@ function InstructorForm() {
             <FileInput control={control} name={"nationalId"} />
           </FormRow>
 
-          <FormRow error={validate("cv ")} label={t("dataKeys.cv ")}>
+          <FormRow error={validate("cv")} label={t("dataKeys.cv")}>
             <FileInput control={control} name={"cv"} />
           </FormRow>
         </InputsRow>
@@ -123,7 +120,7 @@ function InstructorForm() {
               : t("buttons.addInstructor")}
           </Button>
           <Button isLoading={false} size="medium" variation="cancel">
-            {t("buttons.cancel ")}
+            {t("buttons.cancel")}
           </Button>
         </FormActionsContainer>
       </Form>

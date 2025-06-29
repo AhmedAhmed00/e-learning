@@ -11,10 +11,10 @@ import { Link } from "react-router-dom";
 import { CustomProgress } from "../../../ui/CustomProgress";
 
 import DisableCourseModal from "../../../ui/modals/DisableCourseModal";
-import { FaLongArrowAltRight } from "react-icons/fa";
+import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 
 export default function StudentCoursesView() {
-  const { t } = useTranslation();
+  const { t, i18n: { language } = {} } = useTranslation();
   return (
     <Section title={t("routes.students")}>
       <StudentWrapper>
@@ -22,8 +22,8 @@ export default function StudentCoursesView() {
           {/* image row */}
           <Row items="center" justify="start" $gap="25px" type="horizontal">
             <Avatar src={"/profile.jpg"} />
-            <Row type="vertical">
-              <Row gap="6px">
+            <Row justify="center" type="vertical">
+              <Row $justify="center" padding="0px" $margin="0px" gap="6px">
                 <Heading>Ahmed Hamdy</Heading>
                 <Tag type="green">Active</Tag>
               </Row>
@@ -38,7 +38,12 @@ export default function StudentCoursesView() {
           </Row>
         </Row>
 
-        <Row type="horizontal" justify="start" $gap="8px">
+        <Row
+          $margin="20px 10px 20px 0px"
+          type="horizontal"
+          justify="start"
+          $gap="8px"
+        >
           <Heading as={"h5"} color="primary">
             {t("dataKeys.specialization")}:
           </Heading>
@@ -106,8 +111,14 @@ export default function StudentCoursesView() {
 
         <Link to={`/students/1/report `}>
           <Row $margin="20px 0px" type="horizontal" $gap="10px" justify="end">
-            <p style={{ fontSize: "18px" }}>{t("global.viewReports")}</p>
-            <FaLongArrowAltRight />
+            <p style={{ fontSize: "18px", fontWeight: "600" }}>
+              {t("common.viewReports")}
+            </p>
+            {language === "en" ? (
+              <FaLongArrowAltRight />
+            ) : (
+              <FaLongArrowAltLeft />
+            )}
           </Row>
         </Link>
       </StudentWrapper>

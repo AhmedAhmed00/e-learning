@@ -7,8 +7,7 @@ import { useLocation } from "react-router-dom";
 const StyledHeader = styled.header`
   background-color: rgba(249, 249, 249, 1);
   padding: 1.2rem 3.4rem;
-  padding-block: 20px;
-  ${"" /* border: 1px solid var(--color-grey-200); */}
+  padding-block: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -25,7 +24,7 @@ export const Avatar = styled.img`
 function Header({ title }) {
   return (
     <StyledHeader>
-      <Heading as="h2" color="primary">
+      <Heading as="h1" color="primary">
         <span>{title}</span>
       </Heading>
       <LanguageSwitcher />

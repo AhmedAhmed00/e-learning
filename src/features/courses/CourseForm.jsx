@@ -128,8 +128,8 @@ function CourseForm() {
         {/* Submit Button */}
         <Button isLoading={false} size="medium" $variation="primary">
           {isEditingSession
-            ? t("buttons.updateDoctor")
-            : t("buttons.addCategory")}
+            ? t("buttons.updateCourse")
+            : t("buttons.addCourse")}
         </Button>
       </Form>
     </Section>

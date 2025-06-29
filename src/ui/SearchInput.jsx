@@ -10,9 +10,7 @@ const Wrapper = styled.div`
 `;
 
 export const SearchInputStyle = styled.input.attrs((props) => ({
-  placeholder:
-    props.placeholder ||
-    (props.$isRTL ? "إبحث ؟" : "What are you looking for...?"),
+  placeholder: props.placeholder || props.$searchPlaceholder,
 }))`
   border-radius: 8px;
   border: 1px solid var(--color-grey-300);
@@ -37,7 +35,7 @@ const Icon = styled.span`
 
 export default function SearchInput() {
   const { handleFilter } = useFilters();
-  const { i18n: { language, dir } = {} } = useTranslation();
+  const { t, i18n: { language, dir } = {} } = useTranslation();
   const isRTL = dir === "rtl" || language === "ar";
 
   return (
@@ -47,7 +45,8 @@ export default function SearchInput() {
       </Icon>
       <SearchInputStyle
         $isRTL={isRTL}
-        placeholder={isRTL ? "إبحث ؟" : "What are you looking for...?"}
+        $searchPlaceholder={t("common.searchInput")}
+        placeholder={t("common.searchInput")}
         onChange={(e) => handleFilter({ search: e.target.value })}
       />
     </Wrapper>

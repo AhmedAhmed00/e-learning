@@ -1,11 +1,14 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const Unauthorized = () => {
+  const { t } = useTranslation();
+  
   return (
     <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h1>403 - Access Denied</h1>
-      <p>You do not have permission to view this page.</p>
-      <a href="/">Go to Home</a>
+      <h1>403 - {t("common.accessDenied")}</h1>
+      <p>{t("common.noPermission")}</p>
+      <a href="/">{t("common.goToHome")}</a>
     </div>
   );
 };

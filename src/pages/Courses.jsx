@@ -25,7 +25,7 @@ function Courses() {
           <SearchInput />
 
           <TableOperations
-            addTitle={"buttons.addCourse"}
+            addTitle={t("buttons.addCourse")}
             addPath={"/courses/course-form"}
             filterInputs={<FormInputs />}
           />
@@ -52,7 +52,9 @@ export function FormInputs() {
     <>
       <InputsRow dir="column">
         <FormRow label={t("dataKeys.product")}>
-          <Input {...register("vendorName", { required: "هذا الحقل مطلوب" })} />
+          <Input
+            {...register("vendorName", { required: t("validation.required") })}
+          />
         </FormRow>
       </InputsRow>
 

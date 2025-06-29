@@ -4,6 +4,7 @@ import Row from "../Row";
 
 const AnalysisCardStyles = styled.div`
   background-color: white;
+  box-shadow: var(--shadow-sm);
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;

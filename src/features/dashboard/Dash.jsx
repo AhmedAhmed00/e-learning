@@ -28,20 +28,21 @@ export default function Dash() {
   const { t } = useTranslation();
 
   return (
-    <Section title={t("routes.activeCourses")}>
+    <Section title={t("routes.overview")}>
       <Row type="horizontal" $gap="10px">
+        <AnalysisCard
+          percentage={16}
+          title={t("dashboard.activeCourses")}
+          number="20"
+          icon={<MdShoppingCart {...iconStyles()} size={46} />}
+        />
         <AnalysisCard
           percentage={78}
           title={t("dashboard.newStudents")}
           number="20"
           icon={<MdAttachMoney {...iconStyles()} size={46} />}
         />
-        <AnalysisCard
-          percentage={16}
-          title={t("dashboard.totalStudents")}
-          number="20"
-          icon={<MdShoppingCart {...iconStyles()} size={46} />}
-        />
+
         <AnalysisCard
           percentage={7}
           title={t("dashboard.totalIncome")}

@@ -34,19 +34,30 @@ export default function BarChartSales() {
   const { t } = useTranslation();
   return (
     <StatsWrapper>
-      <ChartHead as={"h3"}>{t("totalStudnets")}</ChartHead>
+      <ChartHead as={"h3"}>{t("dataKeys.totalStudents")}</ChartHead>
       <ResponsiveContainer height={400}>
         <BarChart data={data}>
           <CartesianGrid strokeDasharray="3 20" />
           <XAxis
-            tick={{ fontSize: 12 }} // ← change font size here
+            direction={"ltr"}
+            tick={{ fontSize: 14 }} // ← change font size here
             dataKey="name"
+            axisLine={false} // لإزالة خط المحور الرأسي
+            tickLine={false}
           />
           <YAxis
-            tick={{ fontSize: 12 }} // ← change font size here
+            axisLine={false} // لإزالة خط المحور الأفقي
+            tickLine={false}
+            direction={"ltr"}
+            tick={{ fontSize: 14 }} // ← change font size here
           />
           <Tooltip />
-          <Bar barSize={12} radius={8} dataKey="value" fill="#8884d8" />
+          <Bar
+            barSize={12}
+            radius={8}
+            dataKey="value"
+            fill="var(--color-primary)"
+          />
         </BarChart>
       </ResponsiveContainer>
     </StatsWrapper>

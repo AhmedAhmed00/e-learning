@@ -28,7 +28,7 @@ export default function LectureView() {
   };
 
   return (
-    <Section title={t("dataKeys.courses")}>
+    <Section title={t("routes.courses")}>
       <Row type="horizontal">
         <Heading as={"h3"}>{t("dataKeys.lectureTitle")}</Heading>
       </Row>

@@ -80,7 +80,7 @@ function JobRolesForm() {
   }
 
   return (
-    <Section title={"rotes.roles"}>
+    <Section title={t("routes.roles")}>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <InputsRow>
           <FormRow label={t("dataKeys.role")}>
@@ -113,7 +113,7 @@ function JobRolesForm() {
       <div style={{ marginTop: "20px" }}>
         <FormActionsContainer type="horizontal" justify="end" gap="15px">
           <Button isLoading={false} size="medium" variation="primary">
-            {isEditingSession ? "Update Job" : "Add Job"}
+            {isEditingSession ? t("buttons.updateJob") : t("buttons.addJob")}
           </Button>
         </FormActionsContainer>
       </div>

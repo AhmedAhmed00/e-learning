@@ -14,6 +14,8 @@ import { useTranslation } from "react-i18next";
 import Row from "../Row";
 import { IoFilterSharp } from "react-icons/io5";
 import { FormProvider, useForm } from "react-hook-form";
+import { FaFileExcel, FaFilePdf } from "react-icons/fa";
+import { FiDownload } from "react-icons/fi";
 
 const Wrapper = styled.div`
   display: flex;
@@ -33,8 +35,7 @@ export default function TableOperations({
   const [startExport, setStartExport] = useState(false);
   const { handleFilter } = useFilters();
   const { t } = useTranslation();
-    const methods = useForm();
-
+  const methods = useForm();
 
   const { handleClose, isClosing, openModal, setIsClosing, setOpenModal } =
     useModal();
@@ -45,16 +46,20 @@ export default function TableOperations({
     {
       label: t("dataKeys.excel"),
       value: "Excel",
+      icon: <FaFileExcel size={18} color="green" />,
+
       handleExport: () => setStartExport(true),
     },
     {
       label: t("dataKeys.pdf"),
+      icon: <FaFilePdf size={18} color="red" />,
+
       value: "PDF",
     },
   ];
 
   function submitFilter(e) {
-  handleClose() 
+    handleClose();
     handleFilter(e);
   }
 
@@ -105,10 +110,10 @@ export default function TableOperations({
             handleClose={handleClose}
           >
             <FormProvider {...methods}>
-            <Form type="filter" onSubmit={methods.handleSubmit(submitFilter)}>
-              {filterInputs}
-              <FilterButtons  handleClose={handleClose} />
-            </Form>
+              <Form type="filter" onSubmit={methods.handleSubmit(submitFilter)}>
+                {filterInputs}
+                <FilterButtons handleClose={handleClose} />
+              </Form>
             </FormProvider>
           </FilterModal>,
           document.body

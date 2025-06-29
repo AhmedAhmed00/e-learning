@@ -20,7 +20,7 @@ const CenterLabel = styled.div`
   top: 34%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 1.2rem;
+  font-size: 1.9rem;
   font-weight: bold;
   color: var(--color-grey-700);
   pointer-events: none;
@@ -64,13 +64,14 @@ export default function PieChartContainer() {
       <ResponsiveContainer width="100%" height={250}>
         <PieChart>
           <Pie
+            direction={"ltr"}
             data={data02}
             dataKey="value"
             nameKey="name"
             cx="50%"
             cy="50%"
             innerRadius={90}
-            outerRadius={110}
+            outerRadius={120}
             label
           >
             {data02.map((entry, index) => (
@@ -83,20 +84,24 @@ export default function PieChartContainer() {
         </PieChart>
       </ResponsiveContainer>
 
-      <CenterLabel>{t("dataKeys.students")}</CenterLabel>
+      <CenterLabel>{t("dataKeys.totalRequestes")}</CenterLabel>
 
       <LegendRow>
         <LegendItem>
           <Circle color={COLORS[0]} />
-          <p>Active Requests 70%</p>
+          <p style={{ fontSize: "16px" }}>{t("dataKeys.activeRequests")} 70%</p>
         </LegendItem>
         <LegendItem>
           <Circle color={COLORS[1]} />
-          <p>Pending Requests 19%</p>
+          <p style={{ fontSize: "16px" }}>
+            {t("dataKeys.pendingRequests")} 25%
+          </p>
         </LegendItem>
         <LegendItem>
           <Circle color={COLORS[2]} />
-          <p>Rejected Requests 5%</p>
+          <p style={{ fontSize: "16px" }}>
+            {t("dataKeys.rejectedRequests")} 5%
+          </p>
         </LegendItem>
       </LegendRow>
     </StatsWrapper>

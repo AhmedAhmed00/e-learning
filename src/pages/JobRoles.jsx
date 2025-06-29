@@ -45,16 +45,16 @@ export function FormInputs() {
     <>
       <InputsRow dir="column">
         <FormRow label={t("dataKeys.orderNumber")}>
-          <Input {...register("vendorName", { required: "هذا الحقل مطلوب" })} />
+          <Input {...register("vendorName", { required: t("validation.required") })} />
         </FormRow>
       </InputsRow>
 
       <InputsRow>
         <FormRow label={t("dataKeys.start date")}>
-          <Input {...register("vendorName", { required: "هذا الحقل مطلوب" })} />
+          <Input {...register("vendorName", { required: t("validation.required") })} />
         </FormRow>
         <FormRow label={t("dataKeys.end date")}>
-          <Input {...register("vendorName", { required: "هذا الحقل مطلوب" })} />
+          <Input {...register("vendorName", { required: t("validation.required") })} />
         </FormRow>
       </InputsRow>
 

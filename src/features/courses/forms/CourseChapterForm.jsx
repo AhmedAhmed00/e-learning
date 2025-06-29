@@ -31,10 +31,10 @@ export default function CourseChapterForm() {
 
   console.log(errors);
   return (
-    <Section title={t("dataKeys.addNewChapter")}>
+    <Section title={t("buttons.addNewChapter")}>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <InputsRow>
-          <FormRow label={t("dataKeys.chapterName")}>
+          <FormRow label={t("dataKeys.name")}>
             <Input />
           </FormRow>
           <FormRow label={t("dataKeys.price")}>

@@ -1,57 +1,184 @@
 {
-  
-  "common":{ 
-    "searchInput":"What are you looking for ...?",
-    "next":"Next",
-    "update":"Update",
-    "login":"login",
-    "logout":"logout",
-    "cancel":"Cancel",
-    "apply":"Apply",
-    "forgetPassword":"Forget Password ?",
-    "sendCode":"Send Code",
-    "enterPhoneMsg":"Enter your phone number to help us sending you the verification code."
-    
+  "common": {
+    "searchInput": "What are you looking for...?",
+    "next": "Next",
+    "update": "Update",
+    "login": "Login",
+    "logout": "Logout",
+    "cancel": "Cancel",
+    "apply": "Apply",
+    "forgetPassword": "Forgot Password?",
+    "sendCode": "Send Code",
+    "enterPhoneMsg": "Enter your phone number to help us send you the verification code.",
+    "goBack": "Go back",
+    "noResults": "There are no results",
+    "deleteRecord": "Delete Record",
+    "confirmDelete": "Are you sure you need to delete the record?",
+    "keepIt": "No, keep it",
+    "deleteIt": "Yes, delete it",
+    "accessDenied": "Access Denied",
+    "noPermission": "You do not have permission to view this page.",
+    "goToHome": "Go to Home",
+    "pageNotFound": "The page you are looking for could not be found 😢",
+    "viewReports":"View Reports"
   },
   
-  "dashboard":{ 
-    
-  } , 
-  
+  "dashboard": {
+    "newStudents": "New Students",
+    "totalStudents": "Total Students", 
+    "totalIncome": "Total Income",
+    "todaySales": "Today's Sales",
+    "activeCourses": "Active Courses",
+    "openCases": "Open Cases",
+    "closedCases": "Closed Cases",
+    "upcomingSessions": "Upcoming Sessions",
+    "pendingTasks": "Pending Tasks",
+    "dueInvoices": "Due Invoices",
+    "monthlyRevenue": "Monthly Revenue"
+  },
 
-  "routes":{ 
-    
-    
+  "routes": {
+    "dashboard": "Dashboard",
+    "overview": "Overview",
+    "courses": "Courses",
+    "instructors": "Instructors", 
+    "orders": "Orders",
+    "students": "Students",
+    "roles": "Roles",
+    "employees": "Employees",
+    "jobRoles": "Job Roles",
+    "generalInfo": "General Info",
+    "courseDetails": "Course Details",
+    "profile": "Profile",
+    "categories": "Categories",
+    "products": "Products",
+    "groups": "Groups",
+    "customers": "Customers",
+    "ads": "Ads",
+    "discounts": "Discounts",
+    "reviews": "Reviews",
+    "payments": "Payments",
+        "student":"Student",
+        "personalInfo":"Personal Info",
+        
+         "location":"Location"
 
+  },
+
+  "dataKeys": {
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "password": "Password",
+    "status": "Status",
+    "actions": "Actions",
+    "date": "Date",
+    "orderNumber": "Order Number",
+    "student": "Student",
+    "course": "Course",
+    "total": "Total",
+    "instructor": "Instructor",
+    "numberOfCourses": "Number of Courses",
+    "specialization": "Specialization",
+    "role": "Role",
+    "numberOfEmployees": "Number of Employees",
+    "description": "Description",
+    "price": "Price",
+    "totalStudents": "Total Students",
+    "type": "Type",
+    "courseName": "Course Name",
+    "coursePhoto": "Course Photo",
+    "category": "Category",
+    "startDate": "Start Date",
+    "endDate": "End Date",
+    "free": "Free",
+    "paid": "Paid",
+    "active": "Active",
+    "inActive": "Inactive",
+    "inProgress": "In Progress",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "start date": "Start Date",
+    "end date": "End Date",
+    "paymentType": "Payment Type",
+    "orders": "Orders",
+    "commissions": "Commissions",
+    "excel": "Excel",
+    "pdf": "PDF",
+    "export": "Export",
+    "filter": "Filter",
+    "product": "Product",
+    "vendorName": "Vendor Name",
+    "totalRequestes":"Total Requestes", 
+    "activeRequests":"Active Requestes",
+    "pendingRequests":"Pending Requests",
+    "rejectedRequests":"Rejected Requests",
+    "confirmPassword":"Confirm Password",
+    "instructorImage":"Instructor Image",
+    "nationalId":"National Id",
+    "cv":"CV",
+    "totalInComplatedChapters":"Total Incomplated Chapters",
+    "totalComplatedChapters":"Total Complated Chapters",
+    "totalChaptersAvailable":"Total Chapters Available",
+    "progress":"Progress",
+      "chapters":"Chapters",
+      "courseLectures":"Course Lectures",
       
+      
+      "lectureName":"Lecture Name",
+      "lectureTime":"Lecture Time",
+      "quizUrl":"Quiz Url",
+      "videoUrl":"Video Url",
+      "attachments":"Attachments"
 
   },
 
-  
-  "dataKeys":{ 
-   
-  
-  
-  
-  
- 
-  },
-  "buttons":{ 
-   
-  },
-  
-  "groupInputHeader":{
+  "buttons": {
+    "addCourse": "Add Course",
+        "addNewChapter": "Add New Chapter",
+        "addNewLecture":"Add New Lecture",
+        "addJob":"Add Job",
+        "updateJob":"Update Job",
+        "addEmployee":"Add Employee",
+                "updateEmployee":"Update Employee",
+
+    "updateCourse": "Update Course",
+    "addInstructor": "Add Instructor",
+    "addCategory": "Add Category",
+    "updateDoctor": "Update Doctor",
+    "employee": "Add Employee",
+    "jobRole": "Add Job Role",
+    "cancel":"Cancel",
+    "next":"Next"
     
-    
   },
-  
-  
-  "addTitles":{ 
-    
+
+  "groupInputHeader": {
+    "basicInfo": "Basic Information",
+    "contactInfo": "Contact Information",
+    "courseInfo": "Course Information"
+  },
+
+  "addTitles": {
+    "addNewCourse": "Add New Course",
+    "addNewInstructor": "Add New Instructor",
+    "addNewEmployee": "Add New Employee",
+    "addNewRole": "Add New Role"
+  },
+
+  "validation": {
+    "required": "This field is required",
+    "passwordMin": "Password must be at least 3 characters long",
+    "invalidPhone": "Invalid phone number",
+    "invalidEmail": "Invalid email address"
+  },
+
+  "messages": {
+    "loading": "Loading...",
+    "saving": "Saving...",
+    "deleting": "Deleting...",
+    "success": "Operation completed successfully",
+    "error": "An error occurred",
+    "confirmAction": "Are you sure you want to perform this action?"
   }
-  
-  
-  
-
- 
 }

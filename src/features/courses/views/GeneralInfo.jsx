@@ -12,7 +12,7 @@ export default function GeneralInfo() {
   return (
     <>
       <Row
-        $margin={"30px 0px 20px 0px"}
+        $margin={"45px 0px 40px 0px"}
         justify="start"
         $gap="20px"
         type="horizontal"
@@ -22,17 +22,17 @@ export default function GeneralInfo() {
         <Row gap="0px" type="vertical">
           <Row $gap="12px" type="horizontal">
             <Heading as={"h5"}>Machine Learning</Heading>
-            <Tag type="red">Free</Tag>
+            <Tag type="red">{t("dataKeys.free")}</Tag>
           </Row>
           <P>Technical</P>
         </Row>
       </Row>
 
-      <Heading margin="12px 0" as={"h5"} color="primary">
+      <Heading margin="15px 0" as={"h5"} color="primary">
         {t("dataKeys.personalInfo")}
       </Heading>
 
-      <Row type="horizontal" justify="start" $gap="25px">
+      <Row $margin="10px 0px" type="horizontal" justify="start" $gap="25px">
         <InfoItem icon={<IoPersonOutline />} title={"Ahmed Mohamed"} />
         <InfoItem icon={<IoMailOutline />} title={"Ahmed@info.com"} />
         <InfoItem icon={<MdOutlinePhone />} title={"0123456789"} />
@@ -42,7 +42,7 @@ export default function GeneralInfo() {
         />
       </Row>
 
-      <Row $gap="20px" type="horizontal">
+      <Row $gap="90px" type="horizontal">
         <Row gap="4px">
           <Heading margin="26px 6px 0px 0" as={"h5"} color="primary">
             {t("dataKeys.description")}

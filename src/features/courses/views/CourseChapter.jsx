@@ -18,7 +18,7 @@ export default function CourseChapter() {
   const navigate = useNavigate();
   const { courseId, chapterId } = useParams();
   return (
-    <Section title={t("dataKeys.courses")}>
+    <Section title={t("routes.courses")}>
       <Row type="horizontal">
         <Heading as={"h2"}>Maching Learning Basics </Heading>
         <Row $gap="20px" type="horizontal">
@@ -35,12 +35,12 @@ export default function CourseChapter() {
               <FaPlus />
             </i>
 
-            {t("buttons.addNewLec")}
+            {t("buttons.addNewLecture")}
           </Button>
         </Row>
       </Row>
 
-      <Heading as={"h4"} margin="30px 0 10px 0px">
+      <Heading as={"h3"} margin="30px 0 20px 0px">
         {t("dataKeys.courseLectures")}
       </Heading>
 
@@ -75,16 +75,17 @@ function AddLecTrigger() {
           <FaPlus />
         </i>
 
-        {t("buttons.addNewLec")}
+        {t("buttons.addNewLecture")}
       </Button>
       {Modal}
     </>
   );
 }
 function EditLecTrigger() {
+  const { t } = useTranslation();
   const { openModal, handleClose, Modal } = useModalEl(
     <div>
-      My Form Content
+      <p>lesssa msh delwa2ti</p>
       <button onClick={() => handleClose()}>Close</button>
     </div>
   );
@@ -99,7 +100,7 @@ function EditLecTrigger() {
         <i>
           <FaPencilRuler color="var(--color-primary)" />
         </i>
-        Edit Chapter
+        {t("buttons.editChapter")}
       </Button>
       {Modal}
     </>

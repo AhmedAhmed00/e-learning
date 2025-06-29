@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Row from "./Row";
+import { useTranslation } from "react-i18next";
 
 const StyledEmpty = styled.div`
   min-height: 200px;
@@ -19,6 +20,8 @@ const StyledImg = styled.img.attrs({
 `;
 
 function Empty() {
+  const { t } = useTranslation();
+  
   return (
     <StyledEmpty>
       <Row
@@ -29,7 +32,7 @@ function Empty() {
         type="vertical"
       >
         <StyledImg />
-        <p style={{ marginLeft: "20px" }}>There is no results,</p>
+        <p style={{ marginLeft: "20px" }}>{t("common.noResults")}</p>
       </Row>
     </StyledEmpty>
   );

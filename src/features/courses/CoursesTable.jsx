@@ -2,51 +2,54 @@ import GenericTable from "../../ui/table/GenericTable";
 import { renderRow } from "../../ui/RenderRow";
 import CourseRow from "./CourseRow";
 import { TABLE_HEADERS } from "../../data/gridKeys";
-
-const data = [
-  {
-    course: "مادة علم الاجتماع",
-    instructor: "محمد حمدي",
-    price: "5000",
-    totalStudents: "30",
-    type: "علوم اجتماعية",
-    status: "active",
-  },
-  {
-    course: "مادة علم الاجتماع",
-    instructor: "محمد حمدي",
-    price: "5000",
-    totalStudents: "30",
-    type: "علوم اجتماعية",
-    status: "active",
-  },
-  {
-    course: "مادة علم الاجتماع",
-    instructor: "محمد حمدي",
-    price: "5000",
-    totalStudents: "30",
-    type: "علوم اجتماعية",
-    status: "active",
-  },
-  {
-    course: "مادة علم الاجتماع",
-    instructor: "محمد حمدي",
-    price: "5000",
-    totalStudents: "30",
-    type: "علوم اجتماعية",
-    status: "active",
-  },
-  {
-    course: "مادة علم الاجتماع",
-    instructor: "محمد حمدي",
-    price: "5000",
-    totalStudents: "30",
-    type: "علوم اجتماعية",
-    status: "active",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 function CoursesTable() {
+  const { t } = useTranslation();
+
+  const data = [
+    {
+      course: "React Fundamentals",
+      instructor: "John Doe",
+      price: "5000",
+      totalStudents: "30",
+      type: "Online",
+      status: "active",
+    },
+    {
+      course: "Advanced JavaScript",
+      instructor: "Jane Smith",
+      price: "5000",
+      totalStudents: "30",
+      type: "Online",
+      status: "inActive",
+    },
+    {
+      course: "CSS Mastery",
+      instructor: "Ali Hassan",
+      price: "5000",
+      totalStudents: "30",
+      type: "Online",
+      status: "active",
+    },
+    {
+      course: "Node.js Bootcamp",
+      instructor: "Sara Mohamed",
+      price: "5000",
+      totalStudents: "30",
+      type: "Online",
+      status: "inActive",
+    },
+    {
+      course: "Full Stack Development",
+      instructor: "Ahmed Youssef",
+      price: "5000",
+      totalStudents: "30",
+      type: "Online",
+      status: "active",
+    },
+  ];
+
   return (
     <>
       <GenericTable

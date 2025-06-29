@@ -15,7 +15,6 @@ const Form = styled.form`
         display: block;
       }
     `}
- 
 
   ${(props) =>
     props.type !== "modal" &&

@@ -15,12 +15,12 @@ function OrderRow({ data }) {
   const navigate = useNavigate();
   return (
     <TableRow cols={7} role="row">
-      <TableCell>{data.orderNumber}</TableCell>
+      <TableCell style={{ marginInline: "25px" }}>{data.orderNumber}</TableCell>
       <TableCell>{data.name}</TableCell>
       <TableCell>{data.course}</TableCell>
       <TableCell>{data.date}</TableCell>
       <TableCell>{data.total}</TableCell>
-      <TableCell>
+      <TableCell style={{ marginInline: "-30px" }}>
         <Tag type={statusColorMap[data.status] || "blue"}>{data.status}</Tag>
       </TableCell>
       <Actions
