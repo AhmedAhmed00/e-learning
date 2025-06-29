@@ -22,7 +22,7 @@ function Categories() {
         <SearchInput />
         <TableOperations
           addPath={"/categories/category-form"}
-          addTitle={t("addButtons.addCategory")}
+          addTitle={t("buttons.addCategory")}
           filterInputs={<FormInputs />}
         />
       </OperationsContainer>

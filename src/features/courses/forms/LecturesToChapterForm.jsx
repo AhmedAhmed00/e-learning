@@ -65,7 +65,7 @@ export default function LecturesToChapterForm() {
 
         <FormActionsContainer>
           <Button isLoading={false} size="medium" variation="secondary">
-            {t("addButtons.cancel")}
+            {t("buttons.cancel")}
           </Button>
           <Button type="submit" isLoading={false} size="medium">
             {isEditingSession ? t("buttons.updateChpter") : t("buttons.next")}

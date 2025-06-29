@@ -31,7 +31,7 @@ function Ads() {
 
         <TableOperations
           addPath={"/ads/ad-form"}
-          addTitle={t("addButtons.addAd")}
+          addTitle={t("buttons.addAd")}
           filterInputs={<FormInputs />}
         />
       </OperationsContainer>

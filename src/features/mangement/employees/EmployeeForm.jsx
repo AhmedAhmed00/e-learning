@@ -219,7 +219,7 @@
 //           gap="15px"
 //         >
 //           <Button isLoading={isLoadingBtn} size="medium" $variation="primary">
-//             {isEditingSession ? "Update Employee" : t("addButtons.addEmployee")}
+//             {isEditingSession ? "Update Employee" : t("buttons.addEmployee")}
 //           </Button>
 //         </Row>
 //       </Form>
@@ -353,7 +353,7 @@ function EmployeeForm() {
           gap="15px"
         >
           <Button isLoading={false} size="medium" $variation="primary">
-            {isEditingSession ? "Update Employee" : t("addButtons.addEmployee")}
+            {isEditingSession ? "Update Employee" : t("buttons.addEmployee")}
           </Button>
         </Row>
       </Form>

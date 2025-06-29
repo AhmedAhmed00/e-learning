@@ -159,8 +159,8 @@ function VendorForm() {
 
         <Button isLoading={false} size="medium" $variation="primary">
           {isEditingSession
-            ? t("updateButtons.updateDoctor")
-            : t("addButtons.addVendor")}
+            ? t("buttons.updateDoctor")
+            : t("buttons.addVendor")}
         </Button>
       </Form>
     </Section>

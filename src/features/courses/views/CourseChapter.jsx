@@ -35,7 +35,7 @@ export default function CourseChapter() {
               <FaPlus />
             </i>
 
-            {t("addButtons.addNewLec")}
+            {t("buttons.addNewLec")}
           </Button>
         </Row>
       </Row>
@@ -75,7 +75,7 @@ function AddLecTrigger() {
           <FaPlus />
         </i>
 
-        {t("addButtons.addNewLec")}
+        {t("buttons.addNewLec")}
       </Button>
       {Modal}
     </>

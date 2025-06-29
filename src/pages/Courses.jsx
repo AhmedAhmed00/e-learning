@@ -25,7 +25,7 @@ function Courses() {
           <SearchInput />
 
           <TableOperations
-            addTitle={"addButtons.addCourse"}
+            addTitle={"buttons.addCourse"}
             addPath={"/courses/course-form"}
             filterInputs={<FormInputs />}
           />

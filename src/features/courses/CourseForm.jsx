@@ -45,11 +45,7 @@ function CourseForm() {
   };
 
   return (
-    <Section
-      title={
-        state ? t("updateButtons.updateCourse") : t("addButtons.addCourse")
-      }
-    >
+    <Section title={state ? t("buttons.updateCourse") : t("buttons.addCourse")}>
       <Form onSubmit={handleSubmit(onSubmit)}>
         {/* Course Photo */}
         <InputsRow>
@@ -132,8 +128,8 @@ function CourseForm() {
         {/* Submit Button */}
         <Button isLoading={false} size="medium" $variation="primary">
           {isEditingSession
-            ? t("updateButtons.updateDoctor")
-            : t("addButtons.addCategory")}
+            ? t("buttons.updateDoctor")
+            : t("buttons.addCategory")}
         </Button>
       </Form>
     </Section>

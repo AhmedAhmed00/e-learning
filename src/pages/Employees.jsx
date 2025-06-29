@@ -20,7 +20,7 @@ function Employees() {
         <OperationsContainer>
           <SearchInput />
           <TableOperations
-            addTitle={t("addButtons.employee")}
+            addTitle={t("buttons.employee")}
             addPath={"/employees/employee-form"}
             filterInputs={<FormInputs />}
           />

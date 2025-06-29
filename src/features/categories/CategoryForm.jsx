@@ -38,7 +38,7 @@ function CategoryForm() {
   const validate = useValidate(errors);
 
   return (
-    <Section title={t("addButtons.addCategory")}>
+    <Section title={t("buttons.addCategory")}>
       <Form>
         <InputsRow>
           <FormRow
@@ -75,8 +75,8 @@ function CategoryForm() {
 
         <Button isLoading={false} size="medium" $variation="primary">
           {isEditingSession
-            ? t("updateButtons.updateDoctor")
-            : t("addButtons.addCategory")}
+            ? t("buttons.updateCourse")
+            : t("buttons.addCategory")}
         </Button>
       </Form>
     </Section>

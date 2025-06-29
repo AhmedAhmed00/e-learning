@@ -30,7 +30,7 @@ export default function CourseDetails() {
           <i>
             <FaPlus />
           </i>
-          {t("addButtons.addNewChapter")}
+          {t("buttons.addNewChapter")}
         </Button>
       </Row>
       <Link to={"1"}>
