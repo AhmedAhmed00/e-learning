@@ -13,12 +13,11 @@ import Orders from "./pages/Orders";
 import RolesAndEmployees from "./pages/RolesAndEmployees";
 
 import Employees from "./pages/Employees";
-import JobRoles from "./pages/JobRoles";
 
 import ForgetPassword from "./features/authentication/ForgetPassword";
 import Courses from "./pages/Courses";
 import Instructors from "./pages/Instructors";
-import Students from "./pages/students";
+import Students from "./pages/Students";
 import CourseForm from "./features/courses/CourseForm";
 import CourseVeiw from "./features/courses/views/CourseVeiw";
 import GeneralInfo from "./features/courses/views/GeneralInfo";
@@ -29,6 +28,12 @@ import LecturesToChapterForm from "./features/courses/forms/LecturesToChapterFor
 import LectureView from "./features/courses/views/LectureView";
 import InstructorForm from "./features/instructors/InstructorForm";
 import OrderView from "./features/orders/view/OrderView";
+import Instructor from "./features/instructors/view/Instructor";
+import StudentCoursesView from "./features/students/views/StudentCoursesView";
+import StudentReportView from "./features/students/views/StudentReportView";
+import JobRolesForm from "./features/mangement/job-roles/JobRoleForm";
+import JobRoles from "./pages/JobRoles";
+import EmployeeForm from "./features/mangement/employees/EmployeeForm";
 
 const protectedRoutes = [
   {
@@ -59,10 +64,13 @@ const protectedRoutes = [
         element: <CourseChapterForm />,
       },
       {
-        path: "/courses/:id/course-details/chapter-form/lectures-to-chapter",
+        path: "/courses/:courseId/course-details/:chapterId/lecture-form",
         element: <LecturesToChapterForm />,
       },
-      { path: "/courses/:id/course-details/:id", element: <CourseChapter /> },
+      {
+        path: "/courses/:courseId/course-details/:chapterId",
+        element: <CourseChapter />,
+      },
 
       {
         path: "/courses/course-form",
@@ -73,10 +81,19 @@ const protectedRoutes = [
       { path: "/orders/:id", element: <OrderView /> },
 
       { path: "/instructors", element: <Instructors /> },
+      { path: "/instructors/:id", element: <Instructor /> },
       { path: "/instructors/instructor-form", element: <InstructorForm /> },
+
       { path: "/students", element: <Students /> },
+      { path: "/students/:id", element: <StudentCoursesView /> },
+      { path: "/students/:id/report", element: <StudentReportView /> },
+
       { path: "/roles", element: <JobRoles /> },
+
+      { path: "/job-roles/job-roles-form", element: <JobRolesForm /> },
+
       { path: "/employees", element: <Employees /> },
+      { path: "/employees/employee-form", element: <EmployeeForm /> },
       {
         path: "/employees-and-roles/employees",
         element: <RolesAndEmployees />,

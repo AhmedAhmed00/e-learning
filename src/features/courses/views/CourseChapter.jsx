@@ -11,17 +11,32 @@ import styled from "styled-components";
 import { FiDelete } from "react-icons/fi";
 import { useModalEl } from "../../../hooks/useModal";
 import { Line } from "recharts";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 export default function CourseChapter() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+  const { courseId, chapterId } = useParams();
   return (
     <Section title={t("dataKeys.courses")}>
       <Row type="horizontal">
         <Heading as={"h2"}>Maching Learning Basics </Heading>
         <Row $gap="20px" type="horizontal">
           <EditLecTrigger />
-          <AddLecTrigger />
+          <Button
+            onClick={() =>
+              navigate(
+                `/courses/${courseId}/course-details/${chapterId}/lecture-form`
+              )
+            }
+            style={btnWithIconStyles}
+          >
+            <i>
+              <FaPlus />
+            </i>
+
+            {t("addButtons.addNewLec")}
+          </Button>
         </Row>
       </Row>
 
@@ -60,7 +75,7 @@ function AddLecTrigger() {
           <FaPlus />
         </i>
 
-        {t("addButtons.addNewChapter")}
+        {t("addButtons.addNewLec")}
       </Button>
       {Modal}
     </>

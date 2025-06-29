@@ -32,7 +32,7 @@ export default function LecturesToChapterForm() {
   }
 
   return (
-    <Section title={t("dataKeys.addNewChapter")}>
+    <Section title={t("routes.addNewLecture")}>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <InputsRow>
           <FormRow label={t("dataKeys.lectureName")}>
@@ -68,9 +68,7 @@ export default function LecturesToChapterForm() {
             {t("addButtons.cancel")}
           </Button>
           <Button type="submit" isLoading={false} size="medium">
-            {isEditingSession
-              ? t("updateButtons.updateChpter")
-              : t("addButtons.next")}
+            {isEditingSession ? t("buttons.updateChpter") : t("buttons.next")}
           </Button>
         </FormActionsContainer>
       </Form>

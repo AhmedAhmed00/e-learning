@@ -1,23 +1,31 @@
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
 import useDetectMode from "../../../hooks/useDetectMode";
-import useFetchById from "../../../hooks/useFetchById";
-import { jobRolesServices } from "../../../services/apiJobRoles";
 import { useForm } from "react-hook-form";
-import { useEffect } from "react";
-import Spinner from "../../../ui/Spinner";
-import Form from "../../../ui/Form";
 import { InputsRow } from "../../../ui/InputsRow";
 import FormRow from "../../../ui/FormRow";
 import Input from "../../../ui/Input";
 import ToggleSwitch from "../../../ui/ToogleSwitch";
-import Row from "../../../ui/Row";
 import Button from "../../../ui/Button";
-import styled from "styled-components";
-import usePermissions from "./usePermissions";
-import { filterObject, setServerErrors } from "../../../utils/helpers";
-import usePost from "../../../hooks/usePost";
-import useUpdate from "../../../hooks/useUpdate";
-import { useTranslation } from "react-i18next";
+import Row from "../../../ui/Row";
+import Form from "../../../ui/Form";
+import { Section } from "../../../ui/Container";
+import { Textarea } from "../../../ui/Textarea";
+import { FormActionsContainer } from "../../courses/forms/CourseChapterForm";
+
+const permissions = [
+  { id: 1, name: "View Users", key: "user.view" },
+  { id: 2, name: "Create Users", key: "user.create" },
+  { id: 3, name: "Edit Users", key: "user.edit" },
+  { id: 4, name: "Delete Users", key: "user.delete" },
+  { id: 5, name: "View Roles", key: "role.view" },
+  { id: 6, name: "Create Roles", key: "role.create" },
+  { id: 7, name: "Edit Roles", key: "role.edit" },
+  { id: 8, name: "Delete Roles", key: "role.delete" },
+  { id: 9, name: "Access Dashboard", key: "dashboard.access" },
+  { id: 10, name: "Generate Reports", key: "report.generate" },
+];
 
 const Container = styled.div`
   display: grid;
@@ -30,25 +38,6 @@ function JobRolesForm() {
   const navigate = useNavigate();
   const { t } = useTranslation();
   const { id, isEditingSession } = useDetectMode();
-  const { permissions, isLoading: isLoadingPermissions } = usePermissions();
-
-  const { data: job } = useFetchById("job-role", id, jobRolesServices.getById);
-
-  console.log("permissions", permissions);
-
-  const { mutate: addNewJob, addingStatus } = usePost({
-    service: jobRolesServices.create,
-    key: "job-role",
-    resourse: "Job Role",
-  });
-  const { mutate: updateExistingJob, updatingStatus } = useUpdate({
-    key: "job-role",
-    resourse: "Job Role",
-    service: jobRolesServices.update,
-  });
-
-  const isLoadingBtn =
-    updatingStatus === "loading" || addingStatus === "loading";
 
   const {
     handleSubmit,
@@ -66,56 +55,46 @@ function JobRolesForm() {
     },
   });
 
-  useEffect(() => {
-    if (isEditingSession) {
-      reset({
-        ...job,
-        permissions: job?.permissions?.map((p) => p?.id) || [],
-      });
-    }
-  }, [isEditingSession, job, reset]);
-
-  if (isLoadingPermissions && isEditingSession) return <Spinner />;
-
   function onSubmit(values) {
-    const filteredObj = Object.entries(filterObject(values))
-      .filter(([key]) => key !== "name")
-      .reduce((acc, [key, value]) => ({ ...acc, [key]: value }), {});
-    console.log("filterObject", filteredObj);
-    const arrOfPermissions = filteredObj.permissions;
-
-    const body = {
-      name: values.name,
-      permissions: arrOfPermissions,
-    };
-
-    isEditingSession
-      ? updateExistingJob(
-          { id, body },
-          {
-            onSuccess: () => navigate(-1),
-            onError: (error) => setServerErrors(error, setError),
-          }
-        )
-      : addNewJob(body, {
-          onSuccess: () => navigate(-1),
-          onError: (error) => setServerErrors(error, setError),
-        });
+    // const filteredObj = Object.entries(filterObject(values))
+    //   .filter(([key]) => key !== "name")
+    //   .reduce((acc, [key, value]) => ({ ...acc, [key]: value }), {});
+    // console.log("filterObject", filteredObj);
+    // const arrOfPermissions = filteredObj.permissions;
+    // const body = {
+    //   name: values.name,
+    //   permissions: arrOfPermissions,
+    // };
+    // isEditingSession
+    //   ? updateExistingJob(
+    //       { id, body },
+    //       {
+    //         onSuccess: () => navigate(-1),
+    //         onError: (error) => setServerErrors(error, setError),
+    //       }
+    //     )
+    //   : addNewJob(body, {
+    //       onSuccess: () => navigate(-1),
+    //       onError: (error) => setServerErrors(error, setError),
+    //     });
   }
 
   return (
-    <>
+    <Section title={"rotes.roles"}>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <InputsRow>
-          <FormRow label={t("dataKeys.name")}>
+          <FormRow label={t("dataKeys.role")}>
             <Input
-              {...register("name", {
+              {...register("role", {
                 required: { message: "Name Is Required" },
               })}
             />
           </FormRow>
           <FormRow></FormRow>
         </InputsRow>
+        <FormRow label={t("dataKeys.description")}>
+          <Textarea />
+        </FormRow>
 
         <Container>
           {permissions?.map(
@@ -130,14 +109,15 @@ function JobRolesForm() {
               )
           )}
         </Container>
-
-        <Row margin="50px 0px" type="horizontal" justify="end" gap="15px">
-          <Button isLoading={isLoadingBtn} size="medium" variation="primary">
+      </Form>
+      <div style={{ marginTop: "20px" }}>
+        <FormActionsContainer type="horizontal" justify="end" gap="15px">
+          <Button isLoading={false} size="medium" variation="primary">
             {isEditingSession ? "Update Job" : "Add Job"}
           </Button>
-        </Row>
-      </Form>
-    </>
+        </FormActionsContainer>
+      </div>
+    </Section>
   );
 }
 

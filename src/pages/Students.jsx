@@ -13,10 +13,7 @@ function Students() {
       <>
         <OperationsContainer>
           <SearchInput />
-          <TableOperations
-            addPath={"/groups/groups-form"}
-            addTitle={t("addButtons.addStudnet")}
-          />
+          <TableOperations filterable={false} />
         </OperationsContainer>
         <Row>
           <GroupsTable />

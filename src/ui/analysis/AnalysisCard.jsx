@@ -9,7 +9,7 @@ const AnalysisCardStyles = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 15px;
+  padding: 20px 15px;
   border: 1px solid #f5f5f5;
   border-radius: 6px;
 `;
@@ -38,9 +38,11 @@ export default function AnalysisCard({ title, number, icon, percentage }) {
         <Heading style={{ color: "#888888" }} as={"h4"}>
           {title}
         </Heading>
-        <Number>
-          {number} <Percentage>+{percentage} %</Percentage>
-        </Number>
+        {percentage && (
+          <Number>
+            {number} <Percentage>+{percentage} %</Percentage>
+          </Number>
+        )}
       </Row>
       {icon}
     </AnalysisCardStyles>

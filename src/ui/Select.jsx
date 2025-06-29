@@ -6,7 +6,7 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import { useInView } from "react-intersection-observer";
 
 // Styled Components
-export const DropdownContainer = styled.div`
+const DropdownContainer = styled.div`
   position: relative;
   width: 100%;
   min-width: 100px;
@@ -14,24 +14,21 @@ export const DropdownContainer = styled.div`
 
 const DropdownButton = styled.button`
   width: 100%;
-  padding: 0.7rem 1.2rem;
+  padding: 1rem 1.2rem;
   font-size: 1.5rem;
-  ${
-    "" /* border: 1px solid
+  border: 1px solid
     ${(props) =>
       props.$hasError
-        ? "var(--color-red-500)"
+        ? "var(--color-red-800)"
         : props.$type === "white"
-          ? "var(--color-grey-900)"
-          : "var(--color-grey-8900)"}; */
-  }
-  border: 1px solid var(--color-grey-300);
-
+          ? "var(--color-grey-100)"
+          : "var(--color-grey-300)"};
   border-radius: var(--border-radius-sm);
   background-color: var(--color-grey-0);
   text-align: left;
   cursor: pointer;
-  display: flex;
+  display: flex !important;
+  margin-top: 0 !important;
   justify-content: space-between;
   align-items: center;
 
@@ -40,7 +37,7 @@ const DropdownButton = styled.button`
   }
 `;
 
-export const DropdownList = styled.ul`
+const DropdownList = styled.ul`
   position: absolute;
   width: 100%;
   max-height: 20rem;
@@ -53,7 +50,7 @@ export const DropdownList = styled.ul`
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 `;
 
-export const DropdownItem = styled.li`
+const DropdownItem = styled.li`
   padding: 0.8rem 1.2rem;
   font-size: 1.3rem;
   text-transform: capitalize;

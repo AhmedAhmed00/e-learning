@@ -2,17 +2,15 @@ import { useTranslation } from "react-i18next";
 import { OperationsContainer } from "../ui/OperationsContainer";
 import SearchInput from "../ui/SearchInput";
 import TableOperations from "../ui/table/TableOperations";
-import EmployeesTable from "../features/EmployeesAndRoles/employees/EmployeesTable";
 import Row from "../ui/Row";
 
-import JobRolesTable from "../features/mangement/job-roles/JobRolesTable";
 import { Section } from "../ui/Container";
-import { t } from "i18next";
 import { useFormContext } from "react-hook-form";
 import { InputsRow } from "../ui/InputsRow";
 import FormRow from "../ui/FormRow";
 import Input from "../ui/Input";
 import Checkbox from "../ui/Checkbox";
+import EmployeesTable from "../features/mangement/employees/EmployeesTable";
 
 function Employees() {
   const { t } = useTranslation();
@@ -23,12 +21,13 @@ function Employees() {
           <SearchInput />
           <TableOperations
             addTitle={t("addButtons.employee")}
+            addPath={"/employees/employee-form"}
             filterInputs={<FormInputs />}
           />
         </OperationsContainer>
 
         <Row>
-          <JobRolesTable />
+          <EmployeesTable />
         </Row>
       </Section>
     </>

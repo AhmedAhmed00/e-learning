@@ -7,23 +7,21 @@ function JobRoleRow({ jobRole }) {
   const navigate = useNavigate();
 
   if (!jobRole) return null; //LAAAAAAAAAATER
-  const { name, created_at } = jobRole || {};
+  const { role, numberOfEmployees } = jobRole || {};
   console.log(jobRole);
 
   console.log(jobRole);
 
   return (
     <TableRow cols={3} role="row">
-      <TableCell>{name}</TableCell>
-      <TableCell>{created_at}</TableCell>
+      <TableCell>{role}</TableCell>
+      <TableCell>{numberOfEmployees}</TableCell>
 
       <Actions
         onDelete={() => {}}
         onView={() => {}}
         onUpdate={() => {
-          navigate(
-            `/management/job-roles/job-roles-form?mode=update&id=${jobRole.id}`
-          );
+          navigate(`/job-roles/job-roles-form?mode=update&id=${jobRole.id}`);
         }}
       />
     </TableRow>

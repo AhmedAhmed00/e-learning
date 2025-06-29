@@ -19,8 +19,9 @@ function JobRoles() {
         <OperationsContainer>
           <SearchInput />
           <TableOperations
+            filterable={false}
             addTitle={t("addButtons.jobRole")}
-            filterInputs={<FormInputs />}
+            addPath={"/job-roles/job-roles-form"}
           />
         </OperationsContainer>
 
