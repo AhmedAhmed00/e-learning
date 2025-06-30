@@ -7,17 +7,13 @@ import { useState } from "react";
 const StyledAppLayout = styled.div`
   display: grid;
 
-  grid-template-columns: 20rem 1fr;
+  grid-template-columns: auto 1fr;
   grid-template-rows: 1fr;
   height: 100vh;
 `;
 
 const Main = styled.main`
-  ${"" /* padding: 2rem 1.8rem 0.4rem;  */}
-  ${"" /* width: 97%; */}
-  ${"" /* margin-top: 20px; */}
   border: 1px solid var(--color-grey-200);
-  ${"" /* border-radius: 8px; */}
 `;
 
 function AppLayout() {

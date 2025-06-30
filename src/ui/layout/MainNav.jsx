@@ -22,7 +22,7 @@ const navItems = [
   { path: "/employees", icon: <HiOutlineTag />, label: "employees" },
 ];
 
-function MainNav() {
+function MainNav({ isOpen }) {
   const { logout } = useAuth();
   const { t } = useTranslation();
   return (
@@ -36,15 +36,16 @@ function MainNav() {
           marginBottom: "0px",
         }}
       >
-        <Logo w={"20%"} h={"100%"} />
+        <Logo isOpen={isOpen} w={isOpen ? "40%" : "100%"} h={"100%"} />
       </div>
 
       <NavList>
         {navItems?.map((item, index) => (
           <li key={index}>
-            <StyledNavLink to={item.path}>
+            <StyledNavLink isOpen={isOpen} to={item.path}>
               {item.icon}
-              <Heading as={"h4"}>{t(`routes.${item.label}`)}</Heading>
+
+              {isOpen && <Heading as="h4">{t(`routes.${item.label}`)}</Heading>}
             </StyledNavLink>
           </li>
         ))}
@@ -52,14 +53,17 @@ function MainNav() {
 
       <StyledNavLink
         to={"/login"}
+        isOpen={isOpen}
         onClick={() => {
           logout();
         }}
       >
         <CiLogout fontWeight={"bold"} color="var(--color-red-800)" />
-        <Heading as={"h4"} color="red">
-          {t("common.logout")}
-        </Heading>
+        {isOpen && (
+          <Heading as={"h4"} color="red">
+            {t("common.logout")}
+          </Heading>
+        )}
       </StyledNavLink>
     </nav>
   );

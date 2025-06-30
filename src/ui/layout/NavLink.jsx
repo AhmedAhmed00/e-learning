@@ -15,9 +15,8 @@ export const StyledNavLink = styled(NavLink)`
     color: var(--color-grey-800);
     font-size: 1.5rem;
     font-weight: 600;
-    padding: 1rem 0.8rem;
+    padding: ${({ isOpen }) => (isOpen ? "1rem 0.8rem" : "1rem 0rem")};
     transition: all 0.3s;
-    border-radius: 0 8px 8px 0;
   }
 
   &:hover,
@@ -27,12 +26,14 @@ export const StyledNavLink = styled(NavLink)`
     color: #f9f9f9;
     background-color: var(--color-primary);
     ${"" /* border-radius: var(--border-radius-sm); */}
-    border-radius: 0 8px 8px 0;
+    border-radius: ${({ isOpen }) => (isOpen ? "0 8px 8px 0;" : "5px")};
   }
 
   & svg {
-    width: 2rem;
-    height: 2rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    margin: ${({ isOpen }) => !isOpen && "auto"};
+
     color: var(--color-grey-600);
     transition: all 0.3s;
   }
