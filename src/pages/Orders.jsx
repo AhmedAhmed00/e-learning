@@ -10,6 +10,7 @@ import FormRow from "../ui/FormRow";
 import { InputsRow } from "../ui/InputsRow";
 import Input from "../ui/Input";
 import { useFormContext } from "react-hook-form";
+import FilterOrders from "../ui/modals/FilterOrders";
 
 function Orders() {
   const { t } = useTranslation();
@@ -17,7 +18,7 @@ function Orders() {
     <Section title={t("routes.orders")}>
       <OperationsContainer>
         <SearchInput />
-        <TableOperations filterInputs={<FormInputs />} />
+        <TableOperations filteringTrigger={<FilterOrders />} />
       </OperationsContainer>
       <Row>
         <OrdersTable />
@@ -26,45 +27,3 @@ function Orders() {
   );
 }
 export default Orders;
-
-export function FormInputs() {
-  const { t } = useTranslation();
-  const {
-    register,
-    formState: { errors },
-  } = useFormContext();
-
-  return (
-    <>
-      <InputsRow dir="column">
-        <FormRow label={t("dataKeys.orderNumber")}>
-          <Input
-            {...register("vendorName", { required: t("validation.required") })}
-          />
-        </FormRow>
-      </InputsRow>
-      <InputsRow>
-        <FormRow label={t("dataKeys.start date")}>
-          <Input
-            {...register("vendorName", { required: t("validation.required") })}
-          />
-        </FormRow>
-        <FormRow label={t("dataKeys.end date")}>
-          <Input
-            {...register("vendorName", { required: t("validation.required") })}
-          />
-        </FormRow>
-      </InputsRow>
-
-      <InputsRow></InputsRow>
-      <InputsRow>
-        <FormRow label={t("dataKeys.status")}>
-          <Row type="horizontal" justify="start" $gap="10px">
-            <Checkbox>{t("dataKeys.active")}</Checkbox>
-            <Checkbox>{t("dataKeys.inProgress")}</Checkbox>
-          </Row>
-        </FormRow>
-      </InputsRow>
-    </>
-  );
-}

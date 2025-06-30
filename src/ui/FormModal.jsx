@@ -8,9 +8,9 @@ import { createPortal } from "react-dom";
 export const ModalContent = styled.div`
   animation: ${(props) => (props.isClosing ? fadeOut : fadeIn)} 0.2s ease-in-out;
   position: relative;
-  min-width: 420px;
+  min-width: 440px;
   background-color: white;
-  padding: 30px 0px;
+  padding: 40px 0px 0px 0px;
 
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);

@@ -28,8 +28,7 @@ export default function TableOperations({
   addPath,
   addTitle,
   children,
-  filterable = true,
-  filterInputs,
+  filteringTrigger,
 }) {
   const navigate = useNavigate();
   const [startExport, setStartExport] = useState(false);
@@ -71,7 +70,7 @@ export default function TableOperations({
         onSelect={(value) => console.log("Selected:", value)}
         buttonProps={{ variation: "secondary", size: "medium" }}
       />
-      {filterable && (
+      {/* {filterable && (
         <Button onClick={toggleFilter} variation="primary" size="medium">
           <Row
             justify="start"
@@ -85,10 +84,8 @@ export default function TableOperations({
             <p>{t("dataKeys.filter")}</p>
           </Row>
         </Button>
-      )}
-
+      )} */}
       {children}
-
       {addTitle && (
         <Button
           size="large"
@@ -99,8 +96,8 @@ export default function TableOperations({
           {addTitle}
         </Button>
       )}
-
-      {openModal &&
+      {filteringTrigger}
+      {/* {openModal &&
         createPortal(
           <FilterModal
             handleFilter={handleFilter}
@@ -117,7 +114,7 @@ export default function TableOperations({
             </FormProvider>
           </FilterModal>,
           document.body
-        )}
+        )} */}
     </Wrapper>
   );
 }

@@ -12,6 +12,7 @@ import FormRow from "../ui/FormRow";
 import { InputsRow } from "../ui/InputsRow";
 import { useFormContext } from "react-hook-form";
 import Checkbox from "../ui/Checkbox";
+import FilterCoursesModal from "../ui/modals/FilterCoursesModal";
 
 // Styled Select with placeholder
 
@@ -25,6 +26,7 @@ function Courses() {
           <SearchInput />
 
           <TableOperations
+            filteringTrigger={<FilterCoursesModal />}
             addTitle={t("buttons.addCourse")}
             addPath={"/courses/course-form"}
             filterInputs={<FormInputs />}

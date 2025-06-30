@@ -73,7 +73,7 @@ export default function CourseChapterForm() {
   );
 }
 
-export function FormActionsContainer({ children }) {
+export function FormActionsContainer({ children, styleProps }) {
   return (
     <div
       style={{
@@ -82,6 +82,7 @@ export function FormActionsContainer({ children }) {
         marginBottom: "20px",
         display: "flex",
         gap: "20px",
+        ...styleProps,
       }}
     >
       {children}

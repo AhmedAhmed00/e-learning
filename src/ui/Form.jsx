@@ -7,6 +7,18 @@ const Form = styled.form`
   }
 
   ${(props) =>
+    props.type === "filter" &&
+    css`
+      & button {
+        margin: auto;
+        width: 100%;
+        margin-top: 36px;
+        margin-bottom: 10px;
+        display: block;
+      }
+    `}
+
+  ${(props) =>
     props.type !== "filter" &&
     css`
       & button {
