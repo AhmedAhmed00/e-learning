@@ -38,6 +38,7 @@
   },
 
   "routes": {
+    "home":"الرئيسية",
     "dashboard": "Dashboard",
     "overview": "Overview",
     "courses": "Courses",
@@ -123,6 +124,8 @@
     "progress":"Progress",
       "chapters":"Chapters",
       "courseLectures":"Course Lectures",
+      "courseChapters":"Course Chapters",
+      "chapter":"Chapter",
       
       
       "lectureName":"Lecture Name",

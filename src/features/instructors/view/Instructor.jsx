@@ -15,7 +15,7 @@ export default function Instructor() {
   const { t } = useTranslation();
   return (
     <Section title={t("routes.instructors")}>
-      <Row justify="start" $gap="25px" type="horizontal">
+      <Row justify="start" gap="25px" type="horizontal">
         <Avatar src={"/profile.jpg"} />
         <Row type="vertical">
           <Row gap="6px">
@@ -24,7 +24,7 @@ export default function Instructor() {
           </Row>
         </Row>
       </Row>
-      <Row $margin="30px 0px" type="horizontal" justify="start" $gap="25px">
+      <Row $margin="30px 0px" type="horizontal" justify="start" gap="25px">
         <InfoItem icon={<IoPersonOutline />} title={"Ahmed Hamdy"} />
         <InfoItem icon={<IoMailOutline />} title={"Ahmed@info.com"} />
         <InfoItem icon={<MdOutlinePhone />} title={"0123456789"} />
@@ -34,7 +34,7 @@ export default function Instructor() {
         />
       </Row>
 
-      <Row type="horizontal" justify="start" $gap="8px">
+      <Row type="horizontal" justify="start" gap="8px">
         <Heading as={"h5"} color="primary">
           {t("dataKeys.specialization")}:
         </Heading>
@@ -72,7 +72,7 @@ function InfoItem({ icon, title }) {
       justify="center"
       width="fit-content"
       type="horizontal"
-      $gap="6px"
+      gap="6px"
     >
       <StyledIcon>{icon}</StyledIcon>
       <p>{title}</p>

@@ -18,6 +18,7 @@ import DatePickerInput from "../../ui/DatePicker";
 import { Textarea } from "../../ui/Textarea";
 import { Label } from "recharts";
 import RadioGroup from "../../ui/RadioGroup";
+import BreadCrumb from "../../ui/BreadCrumb";
 
 function CourseForm() {
   const { id, isEditingSession } = useDetectMode();
@@ -47,6 +48,7 @@ function CourseForm() {
   return (
     <Section title={state ? t("buttons.updateCourse") : t("buttons.addCourse")}>
       <Form onSubmit={handleSubmit(onSubmit)}>
+        <BreadCrumb />
         {/* Course Photo */}
         <InputsRow>
           <FormRow

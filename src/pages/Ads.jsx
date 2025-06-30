@@ -61,7 +61,7 @@ export function FormInputs() {
       </InputsRow>
       <InputsRow>
         <FormRow label={t("dataKeys.type")}>
-          <Row type="horizontal" justify="start" $gap="10px">
+          <Row type="horizontal" justify="start" gap="10px">
             <Checkbox>{t("dataKeys.active")}</Checkbox>
             <Checkbox>{t("dataKeys.expired")}</Checkbox>
           </Row>

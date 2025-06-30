@@ -113,7 +113,7 @@ export default function DropdownButton({
           style={{ height: "20px" }}
           type="horizontal"
           justify="start"
-          $gap="8px"
+          gap="8px"
         >
           <CiExport size={20} />
           {buttonLabel}

@@ -18,6 +18,7 @@ import Button from "../../../ui/Button";
 import { FormActionsContainer } from "../forms/LecturesToChapterForm";
 import { BiTrash } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
+import BreadCrumb from "../../../ui/BreadCrumb";
 
 export default function LectureView() {
   const { t } = useTranslation();
@@ -33,7 +34,7 @@ export default function LectureView() {
         <Heading as={"h3"}>{t("dataKeys.lectureTitle")}</Heading>
       </Row>
 
-      <Row $gap="60px" $margin="40px 0px" type="horizontal">
+      <Row gap="60px" $margin="40px 0px" type="horizontal">
         <ImgContainer>
           <img
             style={{ width: "100%", borderRadius: "20px" }}
@@ -61,7 +62,7 @@ export default function LectureView() {
               {t("dataKeys.attachments ")}:
             </Heading>
 
-            <Row type="horizontal" justify="start" $gap="15px">
+            <Row type="horizontal" justify="start" gap="15px">
               <FaFilePdf size={70} color="var(--color-red-500)" />
               <FaFilePdf size={70} color="var(--color-red-500)" />
               <FaFilePdf size={70} color="var(--color-red-500)" />

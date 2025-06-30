@@ -35,7 +35,7 @@ const Percentage = styled.span`
 export default function AnalysisCard({ title, number, icon, percentage }) {
   return (
     <AnalysisCardStyles>
-      <Row type="vertical" $gap="8px">
+      <Row type="vertical" gap="8px">
         <Heading style={{ color: "#888888" }} as={"h4"}>
           {title}
         </Heading>

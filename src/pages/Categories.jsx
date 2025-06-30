@@ -55,7 +55,7 @@ export function FormInputs() {
       <InputsRow></InputsRow>
       <InputsRow>
         <FormRow label={t("dataKeys.type")}>
-          <Row type="horizontal" justify="start" $gap="10px">
+          <Row type="horizontal" justify="start" gap="10px">
             <Checkbox checked={getValues("type") === "category"}>
               {t("dataKeys.mainCategory")}
             </Checkbox>

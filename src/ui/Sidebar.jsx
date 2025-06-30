@@ -3,7 +3,6 @@ import MainNav from "./layout/MainNav";
 import { useIsMobile } from "../hooks/useIsMobile";
 import { useState } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi"; // Icon
-import { useTranslation } from "react-i18next";
 
 const StyledSidebar = styled.aside`
   padding: 3.2rem 0;

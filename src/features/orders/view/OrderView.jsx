@@ -23,7 +23,7 @@ export default function OrderView() {
           {t("dataKeys.studentInfo")}
         </Heading>
 
-        <Row justify="start" $gap="15px" type="horizontal">
+        <Row justify="start" gap="15px" type="horizontal">
           <DataEntity title={t("dataKeys.name")} content={order.name} />
 
           <DataEntity
@@ -42,13 +42,13 @@ export default function OrderView() {
         <Heading as="h3" margin="12px 0px" color="primary">
           {t("dataKeys.courseInfo")}
         </Heading>
-        <Row justify="start" $gap="15px" type="horizontal">
+        <Row justify="start" gap="15px" type="horizontal">
           <DataEntity title={t("dataKeys.name")} content={order.course} />
           <DataEntity title={t("dataKeys.price")} content={order.price} />
         </Row>
       </Row>
 
-      <Row $gap="60px" $margin="40px 0px" type="horizontal">
+      <Row gap="60px" $margin="40px 0px" type="horizontal">
         <ImgContainer>
           <Heading
             as={"h4"}

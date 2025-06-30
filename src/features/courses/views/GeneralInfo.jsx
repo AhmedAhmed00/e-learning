@@ -14,13 +14,13 @@ export default function GeneralInfo() {
       <Row
         $margin={"45px 0px 40px 0px"}
         justify="start"
-        $gap="20px"
+        gap="20px"
         type="horizontal"
       >
         <Avatar src={"/profile.jpg"} />
 
         <Row gap="0px" type="vertical">
-          <Row $gap="12px" type="horizontal">
+          <Row gap="12px" type="horizontal">
             <Heading as={"h5"}>Machine Learning</Heading>
             <Tag type="red">{t("dataKeys.free")}</Tag>
           </Row>
@@ -32,7 +32,7 @@ export default function GeneralInfo() {
         {t("dataKeys.personalInfo")}
       </Heading>
 
-      <Row $margin="10px 0px" type="horizontal" justify="start" $gap="25px">
+      <Row $margin="10px 0px" type="horizontal" justify="start" gap="25px">
         <InfoItem icon={<IoPersonOutline />} title={"Ahmed Mohamed"} />
         <InfoItem icon={<IoMailOutline />} title={"Ahmed@info.com"} />
         <InfoItem icon={<MdOutlinePhone />} title={"0123456789"} />
@@ -42,7 +42,7 @@ export default function GeneralInfo() {
         />
       </Row>
 
-      <Row $gap="90px" type="horizontal">
+      <Row gap="90px" type="horizontal">
         <Row gap="4px">
           <Heading margin="26px 6px 0px 0" as={"h5"} color="primary">
             {t("dataKeys.description")}
@@ -107,7 +107,7 @@ function InfoItem({ icon, title }) {
       justify="center"
       width="fit-content"
       type="horizontal"
-      $gap="6px"
+      gap="6px"
     >
       <StyledIcon>{icon}</StyledIcon>
       <P>{title}</P>

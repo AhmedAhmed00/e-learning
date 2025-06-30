@@ -93,7 +93,7 @@ export default function FilterOrders() {
 
       <InputsRow>
         <FormRow label={t("dataKeys.status")}>
-          <Row type="horizontal" justify="start" $gap="10px">
+          <Row type="horizontal" justify="start" gap="10px">
             <Checkbox
               name="active"
               checked={filters.status.active}

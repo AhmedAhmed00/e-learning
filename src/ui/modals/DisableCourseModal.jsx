@@ -15,7 +15,7 @@ export default function DisableCourseModal() {
         Are you sure you need to cancel this course enrollment from Ahmed’s
         courses ?
       </p>
-      <Row type="horizontal" justify="center" $gap="20px">
+      <Row type="horizontal" justify="center" gap="20px">
         <Button variation="danger" onClick={() => handleClose()}>
           No
         </Button>

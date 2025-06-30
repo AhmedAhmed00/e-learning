@@ -14,7 +14,7 @@ export default function StudentReportView() {
 
   return (
     <Section title={t("routes.student")}>
-      <Row type="horizontal" $gap="10px">
+      <Row type="horizontal" gap="10px">
         <AnalysisCard
           title={t("dataKeys.totalChaptersAvailable")}
           icon={<Number>5</Number>}
@@ -32,7 +32,7 @@ export default function StudentReportView() {
       <Heading margin="24px 0px 5px 0px">{t("dataKeys.progress")}</Heading>
       <CustomProgress value={0.3} />
 
-      <Row $margin="25px 0px" $direction="column" $gap="10px">
+      <Row $margin="25px 0px" $direction="column" gap="10px">
         <CourseDetail title="Chapter 1" />
         <CourseDetail title="Chapter 2" />
         <CourseDetail title="Chapter 3" />

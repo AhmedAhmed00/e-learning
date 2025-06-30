@@ -74,7 +74,7 @@ export default function TableOperations({
         <Button onClick={toggleFilter} variation="primary" size="medium">
           <Row
             justify="start"
-            $gap="6px"
+            gap="6px"
             style={{
               height: "22px",
             }}

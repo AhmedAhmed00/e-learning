@@ -2,10 +2,10 @@ import { useTranslation } from "react-i18next";
 import Button from "./Button";
 import Row from "./Row";
 
-export default function FilterButtons({ handleClose,submitFilter }) {
+export default function FilterButtons({ handleClose, submitFilter }) {
   const { t } = useTranslation();
   return (
-    <Row margin="20px 0 0 0" type="horizontal" justify="start" $gap="22px">
+    <Row margin="20px 0 0 0" type="horizontal" justify="start" gap="22px">
       <Button
         onClick={handleClose}
         type="button"

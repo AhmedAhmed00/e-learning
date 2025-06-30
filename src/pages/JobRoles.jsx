@@ -45,22 +45,28 @@ export function FormInputs() {
     <>
       <InputsRow dir="column">
         <FormRow label={t("dataKeys.orderNumber")}>
-          <Input {...register("vendorName", { required: t("validation.required") })} />
+          <Input
+            {...register("vendorName", { required: t("validation.required") })}
+          />
         </FormRow>
       </InputsRow>
 
       <InputsRow>
         <FormRow label={t("dataKeys.start date")}>
-          <Input {...register("vendorName", { required: t("validation.required") })} />
+          <Input
+            {...register("vendorName", { required: t("validation.required") })}
+          />
         </FormRow>
         <FormRow label={t("dataKeys.end date")}>
-          <Input {...register("vendorName", { required: t("validation.required") })} />
+          <Input
+            {...register("vendorName", { required: t("validation.required") })}
+          />
         </FormRow>
       </InputsRow>
 
       <InputsRow>
         <FormRow label={t("dataKeys.paymentType")}>
-          <Row type="horizontal" justify="start" $gap="10px">
+          <Row type="horizontal" justify="start" gap="10px">
             <Checkbox>{t("dataKeys.orders")}</Checkbox>
             <Checkbox>{t("dataKeys.commissions")}</Checkbox>
           </Row>
@@ -68,7 +74,7 @@ export function FormInputs() {
       </InputsRow>
       <InputsRow>
         <FormRow label={t("dataKeys.status")}>
-          <Row type="horizontal" justify="start" $gap="10px">
+          <Row type="horizontal" justify="start" gap="10px">
             <Checkbox>{t("dataKeys.approved")}</Checkbox>
             <Checkbox>{t("dataKeys.rejected")}</Checkbox>
           </Row>

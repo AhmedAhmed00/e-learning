@@ -130,7 +130,10 @@
       "lectureTime":"مدة المحاضرة",
       "quizUrl":"رابط الاختبار",
       "videoUrl":"رابط الفيديو",
-      "attachments":"الملحقات"
+      "attachments":"الملحقات",
+
+      "courseChapters":"فصول الدورة",
+            "chapter":"الفصل"
 
 
         

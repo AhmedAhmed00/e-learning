@@ -38,7 +38,7 @@ export default function Dash() {
         keywords="React, SEO, homepage"
       />
       <Section title={t("routes.overview")}>
-        <Row type="horizontal" $gap="10px">
+        <Row type="horizontal" gap="10px">
           <AnalysisCard
             percentage={16}
             title={t("dashboard.activeCourses")}
@@ -65,7 +65,7 @@ export default function Dash() {
             icon={<MdTrendingUp {...iconStyles()} size={46} />}
           />
         </Row>
-        <Row $gap="20px" type="horizontal" $margin="25px 0 0 0">
+        <Row gap="20px" type="horizontal" $margin="25px 0 0 0">
           <div
             style={{
               width: "70%",

@@ -18,9 +18,9 @@ export default function StudentCoursesView() {
   return (
     <Section title={t("routes.students")}>
       <StudentWrapper>
-        <Row $gap=" 0px" type="horizontal">
+        <Row gap=" 0px" type="horizontal">
           {/* image row */}
-          <Row items="center" justify="start" $gap="25px" type="horizontal">
+          <Row items="center" justify="start" gap="25px" type="horizontal">
             <Avatar src={"/profile.jpg"} />
             <Row justify="center" type="vertical">
               <Row $justify="center" padding="0px" $margin="0px" gap="6px">
@@ -31,7 +31,7 @@ export default function StudentCoursesView() {
           </Row>
           {/* image row */}
 
-          <Row $margin="30px 0px" type="horizontal" justify="end" $gap="25px">
+          <Row $margin="30px 0px" type="horizontal" justify="end" gap="25px">
             <InfoItem icon={<IoPersonOutline />} title={"Ahmed Hamdy"} />
             <InfoItem icon={<IoMailOutline />} title={"Ahmed@info.com"} />
             <InfoItem icon={<MdOutlinePhone />} title={"0123456789"} />
@@ -42,7 +42,7 @@ export default function StudentCoursesView() {
           $margin="20px 10px 20px 0px"
           type="horizontal"
           justify="start"
-          $gap="8px"
+          gap="8px"
         >
           <Heading as={"h5"} color="primary">
             {t("dataKeys.specialization")}:
@@ -110,7 +110,7 @@ export default function StudentCoursesView() {
         </CourseContainer>
 
         <Link to={`/students/1/report `}>
-          <Row $margin="20px 0px" type="horizontal" $gap="10px" justify="end">
+          <Row $margin="20px 0px" type="horizontal" gap="10px" justify="end">
             <p style={{ fontSize: "18px", fontWeight: "600" }}>
               {t("common.viewReports")}
             </p>
@@ -138,7 +138,7 @@ function InfoItem({ icon, title }) {
       justify="center"
       width="fit-content"
       type="horizontal"
-      $gap="6px"
+      gap="6px"
     >
       <StyledIcon>{icon}</StyledIcon>
       <p>{title}</p>

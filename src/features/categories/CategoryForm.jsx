@@ -102,7 +102,7 @@ function SubCategoriesInputList({ control, register, errors }) {
   return (
     <>
       {fields.map((field, index) => (
-        <Row key={field.id} width="50%" $gap="10px" type="horizontal">
+        <Row key={field.id} width="50%" gap="10px" type="horizontal">
           <FormRow
             error={validate(`subCategories.${index}.subCategory`)}
             label={t("dataKeys.subCategory")}
@@ -120,9 +120,9 @@ function SubCategoriesInputList({ control, register, errors }) {
             justify="center"
             items="center"
             type="horizontal"
-            $gap="10px"
+            gap="10px"
           >
-            <Row $gap="10px" padding="10px" justify="center" items="center">
+            <Row gap="10px" padding="10px" justify="center" items="center">
               <FiPlus
                 cursor={"pointer"}
                 style={{}}

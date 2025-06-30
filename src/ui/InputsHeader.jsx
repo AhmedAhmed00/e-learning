@@ -36,7 +36,7 @@ export default function InputsHeader({ index, head, margin }) {
         justify="center"
         width="fit-content"
         type="horizontal"
-        $gap="7px"
+        gap="7px"
       >
         <StyledIndex>{index}</StyledIndex>
         <StyledInputsHeader>{head}</StyledInputsHeader>

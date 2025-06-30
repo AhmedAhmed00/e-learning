@@ -20,6 +20,7 @@ import { Label } from "recharts";
 import RadioGroup from "../../ui/RadioGroup";
 import PhoneInput from "react-phone-input-2";
 import { FormActionsContainer } from "../courses/forms/LecturesToChapterForm";
+import BreadCrumb from "../../ui/BreadCrumb";
 
 function InstructorForm() {
   const { id, isEditingSession } = useDetectMode();
@@ -51,6 +52,7 @@ function InstructorForm() {
       title={state ? t("buttons.updateInstructor") : t("buttons.addInstructor")}
     >
       <Form onSubmit={handleSubmit(onSubmit)}>
+        <BreadCrumb />
         {/* Course Photo */}
         <InputsRow>
           <FormRow

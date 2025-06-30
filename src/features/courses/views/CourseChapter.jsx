@@ -12,6 +12,7 @@ import { FiDelete } from "react-icons/fi";
 import { useModalEl } from "../../../hooks/useModal";
 import { Line } from "recharts";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import BreadCrumb from "../../../ui/BreadCrumb";
 
 export default function CourseChapter() {
   const { t } = useTranslation();
@@ -19,9 +20,22 @@ export default function CourseChapter() {
   const { courseId, chapterId } = useParams();
   return (
     <Section title={t("routes.courses")}>
+      <BreadCrumb
+        manualCrumbs={[
+          {
+            path: `/courses/${courseId}/course-details`,
+            label: t("dataKeys.courseChapters"),
+          },
+          {
+            active: true,
+            label: t("dataKeys.chapter") + " " + chapterId,
+          },
+        ]}
+      />
+
       <Row type="horizontal">
         <Heading as={"h2"}>Maching Learning Basics </Heading>
-        <Row $gap="20px" type="horizontal">
+        <Row gap="20px" type="horizontal">
           <EditLecTrigger />
           <Button
             onClick={() =>
