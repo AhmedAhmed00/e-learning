@@ -3,6 +3,7 @@ import MainNav from "./layout/MainNav";
 import { useIsMobile } from "../hooks/useIsMobile";
 import { useState } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi"; // Icon
+import { useTranslation } from "react-i18next";
 
 const StyledSidebar = styled.aside`
   padding: 3.2rem 0;
@@ -23,7 +24,8 @@ const ToggleButton = styled.i`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: -22px;
+  left: ${({ theme }) =>
+    theme.direction === "ltr" ? "calc(100% - 20px)" : "-22px"};
   width: 3.4rem;
   height: 3.4rem;
   border-radius: 50%;
